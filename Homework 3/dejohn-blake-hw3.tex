@@ -1,0 +1,241 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr,hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{(Blake Dejohn)} } } % type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item [\checkmark]  Did you type in your name and UIN? 
+\item [\checkmark] Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item [\checkmark] Did you sign that you followed the Aggie Honor Code? 
+\item [\checkmark] Did you solve all problems? 
+\item [\checkmark] Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw3.tex} and 
+    \textsl{yourLastName-yourFirstName-hw3.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2022\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{3}
+\duedate{Monday, 10/3/2022 11:59 p.m.}
+\name{ (Blake Dejohn) }{ (531002472) }  % type your first and last name and UIN here
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\begin{enumerate}
+\subsection*{Resources Overall (used for the whole document)}
+\item LaTeX Typesetting System
+\end{enumerate}
+\subsection*{Problem 1}
+\begin{enumerate}
+\item Chapter 3 - "Sets"
+\end{enumerate}
+\subsection*{Problem 2}
+\begin{enumerate}
+\item Chapter 3 - "Sets"
+\end{enumerate}
+\subsection*{Problem 3}
+\begin{enumerate}
+\item Section 3.4 - "Cartesian Products"
+\end{enumerate}
+\subsection*{Problem 4}
+\begin{enumerate}
+\item Section 3.5 - "Relations"
+\end{enumerate}
+\subsection*{Problem 5}
+\begin{enumerate}
+\item Piecewise Functions - \url{https://latex-tutorial.com/piecewise-functions-latex/}
+\item Showing a function is bijective - \url{https://www.youtube.com/watch?v=VKDM1AMlb-k&ab_channel=JoshuaHelston}
+\end{enumerate}
+\subsection*{Problem 6}
+\begin{enumerate}
+\item Section 7.1 - "Rounding up and Down"
+\end{enumerate}
+\subsection*{Problem 7}
+\begin{enumerate}
+\item Chapter 5 - "Equivalence Relations"
+\end{enumerate}
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100 + 7$ (bonus) points.
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} (20 points) Section 3.2, Exercise 3.16.
+[Hint: Use the definitions of $\subseteq$, $\cup$, and the power set.]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Show that $P(A) \cup P(B) \subseteq P(A \cup B)$}
+\subsubsection*{Definitions. \\Subset = "Set A is called a subset of a set B iff all elements of A are also elements of B\\\\Union = "A set that contains precisely the elements of sets A and B. That is, $x \in A \cup B$ iff $x \in A$ or $x\in B$"\\\\Power set = "A set that contains all the subsets of another set"}
+\subsection*{Proof}
+From the definitions of both the subset and union, you can see that it is true that $A \subseteq A \cup B$ and $B \subseteq A \cup B$. This is because if $A \cup B$ is charactersied as a set that contains both the elements of A and B, then by necessity, A and B have to be subsets of this set. That is to say that all the elements of A can be found in $A \cup B$ with the same being said for B. Next, from the definition of the power set, the statements $P(A) \subseteq P(A \cup B)$ and $P(B) \subseteq P(A \cup B)$ can be derived. This holds true because of how the power set of A is simply the collection of the subsets of A with the power set of $A \cup B$ being the collection of subsets of $A \cup B$. In other words, the collection of subsets of A  has to be a subset of the collection of subsets of $A \cup B$ because of how in the powerset $A \cup B$, the subsets of A are included (similar rationale is given for the second statement). Another way to look at this is through the fact that if $C \subseteq D$, then $P(C) \subseteq P(D)$ or if a subset statement holds, then powersetting both sides of said statement should also hold true. Finally, given these two latest statements, we can say that $P(A) \cup P(B) \subseteq P(A \cup B)$. Overall, this holds true because of the definition of the union. If both the $P(A)$ and the $P(B)$ are subsets of $P(A \cup B)$, then it can be reasonably stated that these two sets together, or their union, will also be contained within this greater power set.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 3.3, Exercise 3.21.
+[Hint: Use the definition of set difference.]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof that $A \cap (B - C) = (A \cap B) - C$}
+\subsubsection*{Defintions:\\ 1. $A - B = A - (A \cap B)$\\
+2. $A - B = A \cap B^{C}$}
+\begin{align}
+(A \cap B) - C &= A \cap (B - C)\\
+&= A \cap (B - (B \cap C)) \quad \quad \mbox{by the set diff. definition 1.}\\
+&= A \cap (B - B \cup B - C) \quad \quad \mbox{by de Morgan's laws}\\
+&= A \cap (\emptyset \cup B - C) \quad \quad \mbox{since B - B = $\emptyset$}\\
+&= A \cap (\emptyset \cup B \cap C^{C}) \quad \quad \mbox{by set diff. definition 2.}\\
+&= A \cap B \cap C^{C} \quad \quad \mbox{by $\cup$ dominance over $\emptyset$}\\
+&= (A \cap B) \cap C^{C} \quad \quad \mbox{by $\cup$ associative law}\\
+&=  (A \cap B) - (C^{C})^{C} \quad \quad \mbox{by set diff. definition 2. (reverse)}\\
+&= (A \cap B) - C \quad \quad \mbox{by double complement identity}
+\end{align}
+\setcounter{equation}{0} 
+\end{solution}
+
+\newpage
+\begin{problem} (10 points) Section 3.4, Exercise 3.27.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Find $A \times B$ if $A = \{a,b,c\}$ and $B = \{1,2\}$}
+$A \times B = \{(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)\}$
+\end{solution}
+
+\newpage
+\begin{problem} (12 points) Section 3.5, Exercise 3.33.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Determine the properties of the relation "is a child of"}
+\subsubsection*{(a) Reflexive}
+False, you can not be your own child.
+\subsubsection*{(b) irreflexive}
+True, since this relation is not reflexive, it is therefore irreflexive.
+\subsubsection*{(c) Asymmetric}
+True, if someone is a child of someone else, then they necessarily can not have that relation flipped and be the parent of the first person.
+\subsubsection*{(d) Antisymmetric}
+True, this is because of how the first premise of being antisymmetric is vacously true.
+\subsubsection*{(e) Symmetric}
+False, the relation is already asymmetric so it therefore can not be symmetric
+\subsubsection*{(f) Transitive}
+False, just because your parents are childs of your grandparents, does not mean that you are also you're grandparent's child too.
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 3.8, Exercise 3.56.
+[Hint: Define a bijective function $f\colon \N_0\rightarrow \Z$ by
+considering the argument being even or odd. Then prove that your 
+function is indeed bijective by showing that it is injective and surjective.]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Show that the $|\mathbb{N}_0| = |\mathbb{Z}|$}
+In order to show that two sets have equivalent cardinalities, you have to demonstrate that there exists a bijective function from one set to the other. A bijective function means a function that is both injective and surjective. An injective function is one that always outputs different function values given different function inputs and a surjective function is one that covers the whole range of the function. That is to say that a surjective function has a range that is equal to the codomain of the function.\\\\
+There indeed exists a function that is bijective from the set of non-negative numbers to the set of intgers. This function depends on the input values being even or odd. This is shown below:\\\\
+\begin{equation}
+f(x) =
+\left\{
+	\begin{array}{lr}
+		\frac{x}{2}, & \text{even x}\\
+		\frac{-(x+1)}{2}, & \text{odd x}
+	\end{array}
+\right\}
+\end{equation}
+From this equation, it can be seen that the two different properties of $x$ (being even or odd), split the set of integers in half and deal with them on their own depending on their property. That is to say that all even $x$'s in the set of non-negative numbers take care of the positive side of the set of integers while the odd $x$'s in the set of non-negative numbers take care of the negative side of the set of integers. This makes the function surjective since the range (or the set of integers) are all covered, or able to be gotten to, with this function. Next, this function is injective because of the different function values that are gotten from different function input values. No two different function values will produce the same function output value. This has to do with the fact that one part of the equation only outputs positive values while the other part only outputs negative values. This guarantees that no two different $x$ values will produce the same $f(x)$ value. Overall, this confirms that their exists a bijective function from the set of non-negative numbers to the set of integers, which makes it so the cardinality of both of these sets are equal to one another.
+\end{solution}
+
+\newpage
+\begin{problem} ($10+5=15$ points) Section 7.1, Exercise 7.4 (a) and (e).
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Assumptions: $x$ = real number and $n$ = integer}
+\subsection*{(a) Prove that $\lfloor x \rfloor < n $ if and only if $x < n$}
+Going from the second condition to the first, we can first see that for all $x$, $\lfloor x \rfloor \leqslant x$. The reason for this is that if $x$ is a whole number, then after going through the floor function, it will remain the same number. However, if it is not a whole number, then after going through the floor function, it will go down to become a smaller number. Plugging this condition into the original statement gives you $\lfloor x \rfloor \leqslant x < n$. Since both relations $<$ and $\leqslant$ are transitive, we can say that $\lfloor x \rfloor < n$.
+\\\\Next, given the first condition we can start off by looking at the definition of the floor function. The floor function is defined as $n = \lfloor x \rfloor$ where $ n \leqslant x < n + 1$. Replacing $n$ with $\lfloor x \rfloor$, we get $\lfloor x \rfloor \leqslant x < \lfloor x \rfloor+1$. Then, just using the right side of this equation since that's all that will be needed, we can see, $x < \lfloor x \rfloor + 1$. Subtracting one from the right side gives $x-1 < \lfloor x \rfloor$. Continuing, including the assumption that $\lfloor x \rfloor < n$, we get $x - 1 < \lfloor x \rfloor < n$. Finally, by transitivity we can see that $x-1 < n$. This is important because if $x-1 < n$ then $x < n$ because of the fact that in the floor function, if x does not start off as a whole number, then it will always be end up less than n by a factor of one or more.
+\subsection*{(e) Find counterexamples to $\lfloor x \rfloor \leqslant n$ if and only if $x \leqslant n$}
+A counterexample to this statement includes when $x = 0.5$ and $n = 0$. This is because given these assumptions, $\lfloor x \rfloor \leqslant n$ evaluates to true, however, $x \leqslant n$ evaluates to false. This makes the whole biconditional statement false as the only time it evaluates to true is when both conditions evaluate to true.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 5.1, Exercise 5.4.
+\end{problem}
+\begin{solution} 
+\hspace{1cm}
+\subsection*{Show that $\sim$ is an equivalence relation}
+In order for a relation to be an equivalence relation, it has to be reflexive, symmetric, and transitive. 
+\subsubsection*{Reflexive}
+To be reflexive, this relation has to hold true for any value $x$ related to itself. Testing this we get that $x \sim x$ is defined as $\frac{x}{x} = 2^k$. Simplifying, we get $1 = 2^k$ for some integer $k$. This statement is true as the integer value $0$ for $k$ here will make this statement evaluate to true. This can be repeated for all other values such that $x$ here can be replaced with any other value to achieve the same result.
+\subsubsection*{Symmetric}
+To be symmetric, this relation has to relate $x$ by $y$ and also relate $y$ by $x$. In other words, if one relation holds true, then the opposite should also hold true. First, if $x \sim y$ then $\frac{x}{y} = 2^k$. Similarily, if the relation is symmetric, then $y \sim x$, which means $\frac{y}{x} = 2^l$, should also hold. ($l$ is used here to denote a different integer between the two relations). To see if these relations hold, we need to see if both $l$ and $k$ are integers. If they cannot be integers, then this relation will not be symmetric and therefore not an equivalence relation. Moving on, simplifying the second equation, you get $y = x * 2^l$. Plugging this into the first equation you get, $\frac{x}{x*2^l} = 2^k$. Simplifying further, you have $1 = 2^k * 2^l$. At last, the equation $1 = 2^{k+l}$ is found. This equation shows that $l$ and $k$ can be integers because there are only two possible cases where this equation is true. One is if they are both zero in which case $x = y$ which was went over in the reflexive case above, or the second case, which is that $k = -l$ or vice versa. In both cases, $l$ and $k$ are integers, which therefore makes this relation symmetric.
+\subsubsection*{Transitive}
+Similar to the symmetric test, for transitivity, all variables that have a base of 2 will be checked if they can be integers. In this way, it can be verified if the relation has the property of being transitive and therefore an equivalence relation. To go over transitivity again however, we will be modeling our test after the assumption that $x \sim y$, $y \sim z$, and therefore $x \sim z$. Again, we can model our first step after the symmetric test with the exception being that $y$ will be found from the relation of $x \sim y$ instead of $y \sim x$. With this in mind, we get that $y = \frac{x}{2^k}$. We find $y$ here because in transitivity, we want to find the variable that is coming in the next premise. Because $y \sim z$ means $\frac{y}{z} = 2^l$, we can replace $y$ here with the quantity we found to get:
+\begin{align}
+&\frac{\frac{x}{2^k}}{z} = 2^l\\
+&\frac{x}{z*2^k} = 2^l\\
+&\frac{x}{z} = 2^{k+1}\\
+& z = \frac{x}{2^{k+l}}
+\end{align}
+\setcounter{equation}{0}
+Continuing on, $x \sim z$ means that $\frac{x}{z} = 2^m$. Replacing $z$, you get:
+\begin{align}
+&\frac{x}{\frac{x}{2^{k+l}}} = 2^m\\
+&\frac{x}{1} * \frac{2^{k+1}}{x} = 2^m\\
+&2^{k+l} = 2^m\\
+&k+l = m
+\end{align}
+In conclusion, this shows that the relation is transitive. This is because $k+l$ must be integers in order for them to equal another integer $m$. Overall, this shows that the relation $\sim$ is an equivalence relation, because of the fact that it is reflexive, symmetric, and transitive.
+\end{solution}
+
+\end{document}

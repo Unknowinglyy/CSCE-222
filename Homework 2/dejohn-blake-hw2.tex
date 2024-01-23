@@ -1,0 +1,220 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr,hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{(Blake Dejohn)} } } % type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item [\checkmark] Did you type in your name and UIN? 
+\item [\checkmark] Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item [\checkmark] Did you sign that you followed the Aggie Honor Code? 
+\item [\checkmark] Did you solve all problems? 
+\item [\checkmark] Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw2.tex} and 
+    \textsl{yourLastName-yourFirstName-hw2.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2022\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{2}
+\duedate{Monday, 9/19/2022 11:59 p.m.}
+\name{ (Blake Dejohn) }{ (531002472) }  % type your first and last name and UIN here
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\hspace{1cm}
+\begin{enumerate}
+\subsection*{Resources Overall (used for the whole document)}
+\item How to reset the counter in the align environment - \url{https://latex.org/forum/viewtopic.php?t=4282}
+\item "LaTeX Typesetting System" - found in Canvas
+\end{enumerate}
+\subsection*{Problem 1}
+\begin{enumerate}
+\item Section 2.3 "Logical Equivalence"
+\end{enumerate}
+\subsection*{Problem 2}
+\begin{enumerate}
+\item "Fermat's Last Theorem" - \url{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}
+\item "Pythagorean theorem" - \url{https://en.wikipedia.org/wiki/Pythagorean_theorem}
+\item "Pythagorean triple" - \url{https://en.wikipedia.org/wiki/Pythagorean_triple}
+\end{enumerate}
+\subsection*{Problem 3}
+\begin{enumerate}
+\item Section 2.6 "Predicates and Quantifiers"
+\end{enumerate}
+\subsection*{Problem 4}
+\begin{enumerate}
+\item Section 2.7 "Negations"
+\end{enumerate}
+\subsection*{Problem 5}
+\begin{enumerate}
+\item Section 2.7 "Negations"
+\end{enumerate}
+\subsection*{Problem 6}
+\begin{enumerate}
+\item Section 2.9 "Proofs"
+\end{enumerate}
+\subsection*{Problem 7}
+\begin{enumerate}
+\item Section 2.9 "Proofs"
+\end{enumerate}
+\subsection*{Problem 8}
+\begin{enumerate}
+\item Section 2.9 "Proofs"
+\end{enumerate}
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100 + 5$ (bonus) points.
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} (15 points) Section 2.5, Exercise 2.43 (b) without using a truth table.
+[Hint: You can use the result from part (a), de Morgan's law, and double negation, etc. 
+in your logical derivation.]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof that $A \land B \mbox{ and } \neg(A \rightarrow \neg B)$ is logically equivalent}
+\begin{align}
+A \land B &\equiv \neg (A \rightarrow \neg B)\\
+&\equiv \neg (\neg A \lor \neg B) \quad \quad \mbox{since } P \rightarrow Q \equiv \neg P \lor Q\\
+&\equiv \neg (\neg A) \land \neg (\neg B) \quad \quad \mbox{by de Morgan's Law}\\
+&\equiv A \land B \quad \quad \mbox{by double negation law}
+\end{align}
+\setcounter{equation}{0} 
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.6, Exercise 2.53 (a) and (c). Explain.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Part a. ($a^3 + b^3 = c^3$ over the universe U of nonnegative integers)}
+There is only one triplet that statisfies this equation over the universe of nonnegative integers. This triplet being $(0,0,0)$. Plugging in $0$ for $a$, $b$, and $c$ outputs a truthful value in the equation and plugging in other nonnegative integers seems to not give a solution. This was in fact proven(i.e no positive integer solutions are possible) since this is a simplified version of a famous mathematical theorem (that theorem being Fermat's Last Theorem). Therefore, since no other solutions can be found, it can be reasoned that the only triplet that is contained as a solution for this equation is $(0,0,0)$.
+
+\subsection*{Part c. ($a^2 + b^2 = c^2$ over the universe U = (1,2,3,4,5))}
+Similar to Part a, there is only one triplet in this universe that satisfies the equation. This triple being $(3,4,5)$. Since this equation is exactly the Pythagorean theorem, we can look at well know triples that are valid for this equation. The only one that is contained within this universe is the triple$(3,4,5)$. Because of this, there is only one triple that is valid for this equation.
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.6, Exercise 2.54 (b) and (c)
+\end{problem}
+\begin{solution} 
+\hspace{1cm}
+\subsection*{Part b. (Translation of $\forall x \exists y(x<y)$)}
+Given that $x$ and $y$ are real numbers, for all $x$ and some $y$, $x$ is less than $y$.
+\subsection*{Part c. (Translation of $\forall x \forall z \exists y(x < z) \rightarrow ((x < y) \land (y < z)))$}
+Given that $x$, $y$, and $z$ are all real numbers, for all $x$ and all $z$ and some $y$, if $x$ is less than $z$, then $x$ is less than $y$ and $y$ is less than $z$.
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.7, Exercise 2.58 (a) and (e)
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Part a. (The negation of: $\forall x \exists y (P(x) \rightarrow Q(y)))$}
+\large{$\exists x \forall y (P(x) \land \neg Q(y))$}
+\subsection*{Part e. (The negation of: $\exists x \exists y (\neg P(x) \land \neg Q(y)))$}
+\large{$\forall x \forall y (P(x) \lor Q(y))$}
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.7, Exercise 2.59 (d) and (e)
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Part d. (The negation of: There exists an integer $a$ such that for all integers $b$, $a + b =1001$)}
+For all integers $a$, there exists an integer $b$ such that $a$ plus $b$ does not equal $1001$.
+\subsection*{Part e. (The negation of: For all positive integers $a$, there exists a positive integer $b$ such that $b < a$)}
+There exists some positive integer $a$ such that all positive integers $b$ are greater than or equal to $a$.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.9, Exercise 2.73
+[Hint: Use the property of ``consecutive integers" and the definition of an ``odd integer".]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof that the sum of consecutive integers $m$ and $n$ is an odd integer}
+Suppose that integers $m$ and $n$ are consecutive. By definition, $|a-b| = 1$. This is important because this means that $m$ and $n$ are always exactly 1 unit away from each other. In other words, $m$ is always either 1 unit above $n$ or below it, and vice versa.\\\\
+Starting with the assumption $m$ is one unit above $n$, we get the statement $m = n+1$. Finding the sum(modeled as $S$ here) of these two integers then is modeled with the equation $(n+1) + n = S$. Simplifying, you get $2n +1 =S$. This equation looks identical to the definition of an odd integer, which says that an integer $x$ is odd if and only if there exists an integer $k$ such that $x = 2k +1$. This shows that the sum of $m$ and $n$ is odd since the equation of that sum that is gotten from replacing $m$ with an equivalent expression resembles exactly the equation of an odd integer.\\\\
+Also, starting with another equally likely assumption, a similar equation is found. For example, if we instead say that $m$ is one unit below $n$, then we get the statement $m = n - 1$. Using the same set of steps as above, we get the simplifed equation of $S = 2n -1$. This again shows the sum of $m$ and $n$ is an odd integer, albeit in a more roundabout way. The reason this is the case has to do with the definition of an even integer, which states that an integer $x$ is even if and only if there exists an integer $k$ such that $x = 2k$. With this in mind we can say that the first part of the above sum equation will always give a even integer. However, after the minus one part of the equation, we are back to being an odd integer, since a distance of 1 in either direction of an even integer always gives an odd result  (i.e even - 1 = odd or even + 1 = odd) because of the fact that even integers are separated by factors of 2.\\\\
+With this, it can reasonably stated that the sum of two consecutive integers will always result in an odd sum since with either scenario of consecutive numbers (i.e $m = n+1$ or $m = n-1$), the end equation has always been determined to output an odd integer.
+
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.9, Exercise 2.80 
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof that the contrapositive of the following claim is true: If integers $m + n > 100$, then $m > 40$ or $n > 60$\\\\
+That is to say (or the contrapositive of this statement is): If integers $m \le 40$ and $n \le 60$, then $m + n \le 100$}
+Suppose $m \le 40$ and $n \le 60$. This means that the range of values that these integers can take are $\{1,2,3,4,5\ldots 40\}$ and $\{1,2,3,4,5\ldots60\}$ for $m$ and $n$ respectively. This is important because the maximum value that $m$ can take is $40$ and the maximum value that $n$ can take is $60$. The sum of these two maximum values equals $100$, which corresponds with the statment. This acts as the maximum value that the sum of $m$ and $n$ can take. Therefore, any other pair of numbers used to represent to $m$ and $n$ will always be less than this maximum sum and therefore make this contrapositive statement true. That is to say that any other number that $m$ and $n$ take that is not $40$ and $60$ respectively, will always be under $100$ (since they can only take values that are below their respective maximums). Overall, this proves the contrapositive statement which in turn proofs the first claim which stated: If integers $m + n > 100$, then $m > 40$ or $n > 60$
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 2.9, Exercise 2.84 
+\end{problem}
+\begin{solution} 
+\hspace{1cm}
+\subsection*{Proof by contradiction that the following claim is true: The equation $42m + 70n = 1000$ does not have a integer solution\\\\
+That is to say that the following statement is false: The equation $42m + 70n = 1000$ does have an integer solution}
+Seeking a contradiction, we assume that there exists integers $m$ and $n$ that satisfies the equation directly above. With this in mind, we can try to simplify this equation to see what kind of numbers(rational or integers) that both our variables $m$ and $n$ will be and what type of number our final answer should be.
+\begin{align}
+42m + 70n &= 1000\\
+7(6m+10n) &= 1000 \quad \quad \mbox{Factoring out a 7 from both terms}\\
+6m + 10n &= \frac{1000}{7} \quad \quad \mbox{Dividing 7 from both sides}
+\end{align}
+Given this equation, it can be reasonably stated that $6m$ and $10n$ (and therefore their sum), are integers. This is because the term containing $m$ is just some multiple of $6$, which is an integer. The same goes for the term containing $n$, with the only exception of it being a multiple of 10 instead. This is significant because the answer to their sum, namely $\frac{1000}{7}$, is not only a rational number, but a rational number that can not be easily divided into a whole number (it has a remainder if it were to be divided out). With this, it can be reasonably stated that our starting assumption was false, since there is no way that two integers can be summed together to get a rational number that is not easily dividable. That is to say, because we found a contradiction within our first assumption, we can state that the first claim before this assumption was correct, which was that the equation $42m + 70n = 1000$ does not have an integer solution.
+\end{solution}
+
+\end{document}

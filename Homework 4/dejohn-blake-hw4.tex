@@ -1,0 +1,305 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr,hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to answer this homework. \\[2ex]
+ \textbf{Electronic signature: \underline{ (Blake Dejohn) } } } % type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item [\checkmark] Did you type in your name and UIN? 
+\item [\checkmark] Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted)
+\item [\checkmark] Did you sign that you followed the Aggie Honor Code? 
+\item [\checkmark] Did you solve all problems? 
+\item [\checkmark] Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw4.tex} and 
+    \textsl{yourLastName-yourFirstName-hw4.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2022\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{4}
+\duedate{Wednesday, 10/12/2022 before 11:59 p.m.}
+\name{ (Blake Dejohn) }{ (531002472) } % type your first and last name and UIN here
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\begin{enumerate}
+\subsection*{Resources Overall (used for the whole document)}
+\item LaTeX Typesetting System
+\item How to show the summation symbol - \url{https://latexhelp.com/latex-sigma-symbol/#:~:text=A%20letter%20of%20the%20Greek,for%20big%20size%20of%20sigma.}
+\item How to insert ellipses - \url{https://latex-tutorial.com/ellipses-in-latex/}
+\item How to change font size - \url{https://texblog.org/2012/08/29/changing-the-font-size-in-latex/}
+
+\end{enumerate}
+\subsection*{Problem 1}
+\begin{enumerate}
+\item Section 4.1 - "Perfect Squares"
+\end{enumerate}
+\subsection*{Problem 2}
+\begin{enumerate}
+\item Section 4.1 - "Perfect Squares"
+\end{enumerate}
+\subsection*{Problem 3}
+\begin{enumerate}
+\item Section 4.1 - "Perfect Squares"
+\item Pascal's triangle - \url{https://en.wikipedia.org/wiki/Pascal%27s_triangle}
+\end{enumerate}
+\subsection*{Problem 4}
+\begin{enumerate}
+\item Exponent rules - \url{https://www.mathsisfun.com/algebra/exponent-laws.html}
+\item How to denote subscripts - \url{https://www.overleaf.com/learn/latex/Subscripts_and_superscripts}
+\end{enumerate}
+\subsection*{Problem 5}
+\begin{enumerate}
+\item Fibonacci number definition - \url{https://www.youtube.com/watch?v=sLCBS01SkYI&ab_channel=HyunyoungLee}
+\end{enumerate}
+\subsection*{Problem 6}
+\begin{enumerate}
+\item Factorial definition - \url{https://en.wikipedia.org/wiki/Factorial}
+\end{enumerate}
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100 + 5$ (bonus) points.
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\bigskip
+
+\noindent
+\textbf{Make sure that you strictly follow the structure of induction proof as shown in the 
+lecture notes and how I solved in my videos.}
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} (15 points) Section 4.1, Exercise 4.3 
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof by induction that the sum of the first $n$ squares is given by\\
+$$ P(n): \sum_{k=1}^{n} k^2 = 1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}$$
+\\ for all $n \geqslant 1$.}
+\subsection*{Induction Base}
+The claim $P(n)$ holds for $n = 1$ since:\\ $$1^2 = 1 = \frac{1(1+1)(2(1) + 1)}{6} = \frac{6}{6}$$
+\subsection*{Induction Step}
+$\forall n \geqslant 1 [P(n) \rightarrow P(n+1)]$. That is,\\
+$$\frac{n(n+1)(2n+1)}{6} = \sum_{k=1}^{n} k^2 \mbox{ implies } \frac{(n+1)(n+2)(2n+3)}{6} = \sum_{k=1}^{n+1} k^2$$\\ holds for $n \geqslant 1$.\\\\
+For the induction hypothesis, suppose that $P(n)$ holds. That is,\\ $$\sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$$Then,
+\begin{align*}
+P(n+1) = \underbrace{1^2 + 2^2 + \cdots + n^2} + (n+1)^2 &= \frac{n(n+1)(2n+1)}{6} + (n+1)^2\quad \mbox{by P(n) def. (induction hypothesis)}\\
+&=\frac{n(n+1)(2n+1)}{6} + \frac{6(n+1)^2}{6} \quad \mbox{by common denominators}\\
+&= \frac{n(n+1)(2n+1) + 6(n+1)^2}{6} \quad \mbox{by rewriting}\\
+&= \frac{(n+1)[n(2n+1) + 6(n+1)]}{6} \quad \mbox{by factoring $n+1$}\\
+&= \frac{(n+1)[2n^2 + 7n + 6]}{6} \quad \mbox {by simplifying}\\
+&= \frac{(n+1)[2n^2 + 4n + 3n + 6]}{6} \quad \mbox{by rewriting}\\
+&= \frac{(n+1)[2n(n+2)+3(n+2)]}{6} \quad \mbox{by factoring}\\
+&= \frac{(n+1)[(2n+3)(n+2)]}{6} \quad \mbox{by factoring n+2}
+\end{align*}
+Which proves that the implication $P(n) \rightarrow P(n+1)$ is true for all $n \geqslant 1$. Therefore, by induction, it can be concluded that $P(n)$ holds for all $n \geqslant 1$.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 4.1, Exercise 4.4 
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof by induction that the sum of the first $n$ cubes is given by\\
+$$P(n): \sum_{k=1}^{n} k^3 = 1^3 + 2^3 + \cdots + n^3 = (1+2+\cdots+n)^2 = \frac{n^2(n+1)^2}{4} $$\\ for all $n \geqslant 1$.}
+\subsection*{Induction Base}
+The claim $P(n)$ holds for $n = 1$ since:\\
+$$1^3 = 1 = \frac{1^2(1+1)^2}{4} = \frac{4}{4}$$
+\subsection*{Induction Step}
+$\forall n \geqslant 1[P(n) \rightarrow P(n+1)]$. That is,\\
+$$\frac{n^2(n+1)^2}{4} = \sum_{k=1}^{n} k^3 \mbox{ implies } \frac{(n+1)^2(n+2)^2}{4} = \sum_{k=1}^{n+1} k^3$$\\
+holds for $n \geqslant 1$.\\\\
+For the induction hypothesis, suppose that P(n) holds. That is,\\
+$$\sum_{k=1}^{n} k^3 = \frac{n^2(n+1)^2}{4}$$ Then,
+\begin{align*}
+P(n+1) = \underbrace{1^3 + 2^3 + \cdots + n^3} + (n+1)^3 &= \frac{n^2(n+1)^2}{4} + (n+1)^3 \quad \mbox{by $P(n)$ def. (induction hypothesis)}\\ 
+&= \frac{n^2(n+1)^2}{4} + \frac{4(n+1)^3}{4} \quad \mbox{by common denominators}\\
+&= \frac{n^2(n+1)^2 + 4(n+1)^3}{4} \quad \mbox{by rewriting}\\
+&= \frac{(n+1)^2[n^2+4(n+1)]}{4} \quad \mbox{by factoring $(n+1)^2$}\\
+&= \frac{(n+1)^2[n^2+4n+4]}{4} \quad \mbox{by simplifying}\\
+&= \frac{(n+1)^2[(n+2)(n+2)]}{4} \quad \mbox{by factoring}\\
+&= \frac{(n+1)^2[(n+2)^2]}{4} \quad \mbox{by rewriting}
+\end{align*}
+Which proves that the implication $P(n) \rightarrow P(n+1)$ is true for all $n \geqslant 1$.
+Therefore, by induction, it can be concluded that $P(n)$ holds for all $n \geqslant 1$.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 4.1, Exercise 4.5 
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof by induction that the sum of the squares of the first $n$ odd positive integers is given by\\
+$$ P(n) : \sum_{k=1}^{n} (2k-1)^2 = 1^2 + 3^2 + 5^2 + \cdots + (2n-1)^2 = \frac{1}{3}(4n^3 - n)$$ \\ for all positive integers $n$ (or $n \geqslant 1$)}
+\subsection*{Induction Base}
+The claim $P(n)$ holds for $n = 1$ since:\\ 
+$$1^2 = 1 = \frac{1}{3}(4(1)^3 - 1) = \frac{1}{3}(3)$$
+\subsection*{Induction Step}
+$\forall n \geqslant 1[P(n) \rightarrow P(n+1)]$. That is,\\
+$$\frac{1}{3} (4n^3 - n) = \sum_{k=1}^{n} (2k-1)^2 \mbox{ implies } \frac{1}{3}(4(n+1)^3 - (n+1)) = \sum_{k=1}^{n+1} (2k-1)^2$$\\
+holds for $n \geqslant 1$.\\\\
+For the induction hypothesis, suppose that $P(n)$ holds. That is,\\
+$$\sum_{k=1}^{n} (2k-1)^2 = \frac{1}{3}(4n^3 - n)$$ Then,
+\begin{align*}
+P(n+1) = \underbrace{1^2 + 3^2+ 5^2 + \cdots + (2n-1)^2} + (2n+1)^2 &= \frac{1}{3}(4n^3-n) + (2n+1)^2 \mbox{\footnotesize{ by $P(n)$ def.(induction hypothesis)}}\\
+&= \frac{4}{3}n^3 - \frac{n}{3} + 4n^2 + 4n + 1 \quad \mbox{by simplifying}\\
+&= \frac{4}{3}n^3 - \frac{n}{3} + \frac{12n^2}{3} + \frac{12n}{3} + \frac{3}{3} \mbox{\small{ by common denominators}}\\
+&= \frac{4n^3 - n +12n^2 + 12n + 3}{3} \quad \mbox{by rewriting}\\
+&= \frac{4n^3 + 12n^2 + 11n + 3}{3} \quad \mbox{by simplifying}\\
+&= \frac{1}{3} (4n^3 + 12n^2 + 11n + 3) \quad \mbox{by rewriting}\\
+&= \frac{1}{3} (4n^3 + 12n^2 + 12n + 4 - n - 1) \quad \mbox{by rewriting}\\
+&= \frac{1}{3} (4(n^3 + 3n^2 + 3n + 1) - n - 1) \quad \mbox{by factoring out $4$}\\
+&= \frac{1}{3} (4(n+1)^3 - n - 1) \mbox{ by Pascal's triangle factoring}\\
+&= \frac{1}{3} (4(n+1)^3 - (n+1)) \quad \mbox{by factoring out $-1$}
+\end{align*}
+Which proves that the implication $P(n) \rightarrow P(n+1)$ is true for all $n \geqslant 1$.
+Therefore, by induction, it can be concluded that $P(n)$ holds for all $n \geqslant 1$.
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 4.1, Exercise 4.6 
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof by induction that the integer $2^{2n} - 1$ is divisible by $3$ for all integers $n \geqslant 1$.\\\\
+That is, for all integers $n \geqslant 1$, there exists an integer $x$ such that $\frac{2^{2n} - 1}{3} = x$ or, similarily, $3x = 2^{2n} - 1$.\\\\
+($P(n)$ will refer to the second equation, which is $3x = 2^{2n} - 1$.)}
+\subsection*{Induction Base}
+The claim $P(n)$ holds for $n = 1$ since:\\
+$$2^{2(1)} - 1 = 4 - 1 = 3 $$
+$$3x = 3 $$
+$$x = 1$$
+Formally, this holds true since there does exist an integer $x$ where this equation holds true for a value of $n = 1$. Namely, that integer being $1$.
+\subsection*{Induction Step}
+$\forall n \geqslant 1[P(n) \rightarrow P(n+1)]$. That is,\\
+$$ 3x_{1} = 2^{2n} - 1 \mbox{ implies } 3x_{2} = 2^{2n+2} - 1 $$\\
+holds for $n \geqslant 1$.\\(subscripts on the $x$'s are meant to denote that $P(n)$ and $P(n+1)$ have different $x$'s and are therefore different multiples of $3$ from each other)\\\\
+For the induction hypothesis, suppose that $P(n)$ holds. That is,\\
+$$3x_1 = 2^{2n} - 1$$
+or equivalently,
+$$ 2^{2n} = 3x_1 + 1$$
+Then,
+\begin{align*}
+P(n+1) &= 2^{2n+2} - 1 \quad \mbox{by plugging in $n+1$ into $P(n)$}\\
+&= 2^{2n} * 2^2 - 1 \quad \mbox{by exponent rules}\\
+&= 4 * \underbrace{2^{2n}} - 1 \quad \mbox{by rewriting}\\
+&= 4 (3x_1+1) -1 \quad \mbox{by the 2nd $P(n)$ def. (induction hypothesis)}\\
+&= 12x_1 + 3 \quad \mbox{by simplifying}\\
+&= 3(4x_1 + 1) \quad \mbox{by factoring out 3}\\
+3x_2 &= 3(4x_1 + 1) \quad \mbox{by the induction step's implication}
+\end{align*}
+This proves by induction that there does exist an integer $x_2$ where $P(n+1)$ is divisible/is a multiple of $3$. This is because, per the induction hypothesis, $x_1$ is recognized as a positive integer that makes $P(n)$ hold given a value of $n$. This is important because this integer being multipled by $4$ then having $1$ added to it still makes it a positive integer (i.e. $4x_1 + 1$ is an integer). Because of this, it can be said that $3$ times this value, which again is an integer, is a multiple of 3. So, because of the nature of multiples, anything that is a multiple of a number, in this case $3$, is also divisible by that same number. Therefore, it was proven that the implication $P(n) \rightarrow P(n+1)$ is true for all $n \geqslant 1$ which makes one conclude that $P(n)$ holds for all $n \geqslant 1$.
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 4.3, Exercise 4.15
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof by induction that the sum of the first $n$ terms of the Fibonacci sequence that have an even index is given by\\
+$$P(n): \sum_{k=1}^{n} f_{2k} = f_2 + f_4 + \cdots + f_{2n} = f_{2n+1} - 1$$\\
+for all positive integers $n$ (or $n \geqslant 1$).}
+\subsection*{Fibonacci number definition}
+A Fibonacci number can be defined as:
+$$ f_n = f_{n-1} + f_{n-2}$$
+Overall, this means that a Fibonacci number can be found by adding the two consecutive Fibonacci numbers that came before it in the sequence. This is important because it means that as long as two Fibonacci numbers are consecutive, they can be added to find another Fibonacci number, no matter what value their $n$ term holds.
+\subsection*{Induction Base}
+The claim $P(n)$ holds for $n = 1$ since:\\
+$$ f_2 = 1 = f_{2(1) + 1} - 1 = f_3 - 1 = 1 $$
+\subsection*{Induction Step}
+$\forall n \geqslant 1[P(n) \rightarrow P(n+1)]$. That is,\\
+$$ f_{2n+1} - 1 = \sum_{k=1}^{n} f_{2k} \mbox{ implies } f_{2n+3} - 1 = \sum_{k=1}^{n+1} f_{2k} $$\\
+holds for all $n \geqslant 1$.\\\\
+For the induction hypothesis, suppose that $P(n)$ holds. That is,\\
+$$ \sum_{k=1}^{n} f_{2k} = f_{2n+1} - 1 $$ Then,
+\begin{align*}
+P(n+1) = \underbrace{f_2 + f_4 + \cdots + f_{2n}} + f_{2n+2} &= f_{2n+1} - 1 + f_{2n+2} \quad \mbox{by the $P(n)$ def. (induction hypothesis)}\\
+&= f_{2n+1} + f_{2n+2} - 1 \quad \mbox{by rewriting}\\
+&= f_{2n+3} - 1 \quad \mbox{by definition of a Fibonacci number}
+\end{align*}
+This proves that the implication $P(n) \rightarrow P(n+1)$ is true for all $n \geqslant 1$. To further explain the last part of the proof, the reason $f_{2n+1} + f_{2n+2}$ could be simplified to $f_{2n+3}$, even though their $n$ terms are multiplied by $2$, has to do with the definition of Fibonacci numbers. In general, to simplify equations having to do with Fibonacci numbers, it does not matter what is happening to the $n$ terms of two Fibonacci numbers that are being added when trying to simplify if the same thing is happening to the $n$ terms of the two Fibonacci numbers in question. All that matters is if the two Fibonacci numbers are consecutive or not. In this case, $f_{2n+1}$ and $f_{2n+2}$ are consecutive, so they can be simplified into one term when added. Although, this same operation also needs to be present in the $n$ term of the Fibonacci number made when adding these two Fibonacci numbers in order to truly be the next Fibonacci number in the sequence. Altogether, by induction, this showed that $P(n)$ holds for all $n \geqslant 1$.
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 4.6, Exercise 4.31
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Proof by strong induction that $P(n): f_n = n!$ holds for all integers $n \geqslant 1$ where:\\
+$$f_n = (n^3-3n^2+2n)f_{n-3}$$ or equivalently
+$$ f_n = (n(n-1)(n-2))f_{n-3} $$
+and
+$$ f_1 = 1 $$
+$$ f_2 = 2 $$
+$$ f_3 = 6 $$}
+\subsection*{Factorial definition}
+A factorial can be defined as:\\
+$$ n! = n * (n-1) * (n-2) * (n-3) * \cdots * 3 * 2 * 1$$ or
+$$ n! = n * (n-1)! $$
+This definition of factorial shows not only how to compute a factorial, but also how factorials can be related to each other if they are consecutive (if you can substract one from the inside of one factorial to get the other).
+\subsection*{Induction Bases}
+The claim $P(n)$ holds for $n = 1, 2, 3$ since:\\
+For $n = 1$: $f_1 = 1 = 1! = 1$\\
+For $n = 2$: $f_2 = 2 = 2! = 2$\\
+For $n = 3$: $f_3 = 6 = 3! = 6$
+\subsection*{Induction Step}
+$\forall n \geqslant 1[(P(1) \land P(2) \land P(3) \land \cdots \land P(n)) \rightarrow P(n+1)]$. That is,\\
+$$ (f_1 = 1! \land f_2 = 2! \land f_3 = 3! \land \cdots \land f_n = n!) \mbox{ implies } f_{n+1} = (n+1)! $$\\ holds for all $n \geqslant 1$.\\\\
+For the strong induction hypothesis, suppose that $P(k): f_k = k!$ holds for all k in the range $1 \leqslant k \leqslant n$ where $n \geqslant 3$. That is,\\
+$$(f_1 = 1! \land f_2 = 2! \land f_3 = 3!)$$Then,
+\begin{align*}
+f_{n+1} &= ((n+1)(n)(n-1)\underbrace{f_{n-2}})\quad \mbox{by $f_n$ def.}\\
+&= (n+1)(n)(n-1)*(n-2)! \quad \mbox{by the $P(k)$ def. (strong induction hypothesis)}\\
+&= (n+1)! \quad \mbox{by the definition of factorials}
+\end{align*}
+This proves that the implication $(P(1) \land P(2) \land P(3) \land \cdots \land P(n)) \rightarrow P(n+1)$ is true for all $n \geqslant 1$. To explain the last part of the proof, the reason why $(n+1)(n)(n-1)*(n-2)!$ can be rewritten as $(n+1)!$ is because of the definition of factorials. Starting from $(n+1)$, if you substract one from this term multiple times you get $n$, then $(n-1)$, then finally $(n-2)$. According to the definition of factorials, this is exactly the definition of $(n+1)!$ since you can relate one factorial to another by substracting by one, multiplying the results of each substraction, and then finally stop at some point in which you put the factorial sign at the term you stopped at. Therefore, by strong induction, it can be concluded that $P(n)$ holds for all $n \geqslant 1$.
+\end{solution}
+
+\end{document}

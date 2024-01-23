@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath} % needed for the align* environment
+
+\begin{document}
+\vspace*{-15mm}
+\begin{center}
+CSCE 222 Discrete Structures for Computing\\[.5ex]
+Hyunyoung Lee\\[1ex]
+\textbf{Example \LaTeX\ source for creating a truth table and aligning derivation steps}\\[1ex]
+\end{center}
+
+\noindent
+For example, to draw the truth table for $p \land q$ and $p \oplus q$ as below
+\begin{displaymath}
+\begin{array}{|c c||c|c|} 
+% |c c|c|c| means that there are four columns in the table where 
+% a vertical bar '|' will be printed on the left and right borders,
+% and between the third and the fourth columns.  I put double  
+% vertical bars '||' between the second and the third columns to 
+% separate the possible value combinations for the variables  
+% (the first two columns) and the resulting values of the operations  
+% on those values (the last two columns). Note that between the 
+% first two columns there is no bar.
+% 
+% The letter 'c' means the value will be centered within the column. 
+% If you want the value to be left-aligned, then you give letter 'l' 
+%  instead, and to have it right-aligned, give letter 'r'.
+%
+p & q & p \land q & p \oplus q\\ % Use & to separate the columns
+\hline  % Put a horizontal line between the table header and the rest.
+T & T & T & F\\
+T & F & F & T\\
+F & T & F & T\\
+F & F & F & F\\
+\end{array}
+\end{displaymath}
+
+\noindent
+the \LaTeX\ source looks like this:
+\small{
+\begin{verbatim}
+\begin{displaymath}
+\begin{array}{|c c||c|c|} 
+% |c c|c|c| means that there are four columns in the table where 
+% a vertical bar '|' will be printed on the left and right borders,
+% and between the third and the fourth columns.  I put double  
+% vertical bars '||' between the second and the third columns to 
+% separate the possible value combinations for the variables  
+% (the first two columns) and the resulting values of the operations  
+% on those values (the last two columns). Note that between the 
+% first two columns there is no bar.
+% 
+% The letter 'c' means the value will be centered within the column. 
+% If you want the value to be left-aligned, then you give letter 'l'  
+% instead, and to have it right-aligned, give letter 'r'.
+%
+p & q & p \land q & p \oplus q\\ % Use & to separate the columns
+\hline  % Put a horizontal line between the table header and the rest.
+T & T & T & F\\
+T & F & F & T\\
+F & T & F & T\\
+F & F & F & F\\
+\end{array}
+\end{displaymath}
+\end{verbatim}
+}
+
+\goodbreak
+
+To align derivation steps, we can use the align or align* environment.  
+The align environment puts a label at the end of each line whereas align* 
+does not.  Also note that the align environment is already a math 
+environment, i.e., within the align environment, you do not enclose math 
+symbols within the dollar signs. For example, to show the derivation of the 
+logical equivalence $\neg(p\rightarrow q)\equiv p\land \neg q$ in the last 
+page of lecture slides propositional.pdf, you can do as below.
+\begin{align*}
+% Each line of derivation must end with two backslashes \\ (newline 
+% symbol in LaTeX).
+% In each line, there must be one ampersand & symbol preceding the 
+% symbol that you want to align.  In this example, the symbol to be 
+% aligned is the equivalence symbol \equiv, thus we put the & symbol 
+% right before the \equiv symbol.
+% The \quad command puts some space there.
+% \mbox{ } is to display a text within the math environment.  It is used 
+% when you need to put explanations within the math mode.
+%
+\neg(p\rightarrow q) 
+&\equiv \neg(\neg p\lor q) \quad \mbox{ previous result: } 
+                           p\rightarrow q\equiv \neg p\lor q\\
+&\equiv \neg(\neg p) \land \neg q \quad \mbox{ de Morgan's Law}\\
+&\equiv p\land \neg q \quad \mbox{ double negation law}
+\end{align*}
+\noindent
+for which, the \LaTeX\ source looks like this:
+\small{
+\begin{verbatim}
+\begin{align*}
+% Each line of derivation must end with two backslashes \\ (newline 
+% symbol in LaTeX).
+% In each line, there must be one ampersand & symbol preceding the 
+% symbol that you want to align. In this example, the symbol to be 
+% aligned is the equivalence symbol \equiv, thus we put the & symbol 
+% right before the \equiv symbol.
+% The \quad command puts some space there.
+% \mbox{ } is to display a text within the math environment. It is used 
+% when you need to put explanations within the math mode.
+%
+\neg(p\rightarrow q) 
+&\equiv \neg(\neg p\lor q) \quad \mbox{ previous result: } 
+                           p\rightarrow q\equiv \neg p\lor q\\
+&\equiv \neg(\neg p) \land \neg q \quad \mbox{ de Morgan's Law}\\
+&\equiv p\land \neg q \quad \mbox{ double negation law}
+\end{align*}
+\end{verbatim}
+\end{document}

@@ -1,0 +1,305 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr,hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to answer this homework. \\[2ex]
+ \textbf{Electronic signature: \underline{ (Blake Dejohn) } } } % <= type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item [\checkmark] Did you type in your name and UIN? 
+\item [\checkmark] Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted)
+\item [\checkmark] Did you sign that you followed the Aggie Honor Code? 
+\item [\checkmark] Did you solve all problems? 
+\item [\checkmark] Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw6.tex} and 
+    \textsl{yourLastName-yourFirstName-hw6.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}
+    Your files must contain your name and UIN in the given spaces and the electronic signature
+    (your full name) correctly; otherwise, you may receive zero points for this homework\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2022\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{6}
+\duedate{Monday, 11/7/2022 before 11:59 p.m.}
+\name{ (Blake Dejohn) }{ (531002472) } % <= type your full name and UIN here
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\begin{enumerate}
+\subsection*{Resources Overall (used for the whole document)}
+\item LaTeX Typesetting System
+\item Changing type size in math mode - \url{https://www.stat.berkeley.edu/~paciorek/computingTips/Type_sizes_changing_type_si.html}
+\end{enumerate}
+\subsection*{Problem 1}
+\begin{enumerate}
+\item Section 12.1 - "Fundamental Counting Principles"
+\end{enumerate}
+\subsection*{Problem 2}
+\begin{enumerate}
+\item Section 12.1 - "Fundamental Counting Principles"
+\end{enumerate}
+\subsection*{Problem 3}
+\begin{enumerate}
+\item Calculating the number of palindromes given a word length and specific alphabet - \url{https://math.stackexchange.com/questions/2430107/how-to-calculate-the-number-of-palindromes-of-a-given-number-of-characters}
+\end{enumerate}
+\subsection*{Problem 4}
+\begin{enumerate}
+\item Section 12.2 - Permutations and Combinations
+\item How to write combinations/permutations in LaTeX - \url{https://www.rollpie.com/post/595}
+\end{enumerate}
+\subsection*{Problem 5}
+\begin{enumerate}
+\item Section 12.3 - Combinatorial Proofs
+\item How to write binomial coefficients - \url{https://www.overleaf.com/learn/latex/Fractions_and_Binomials}
+\end{enumerate}
+\subsection*{Problem 6}
+\begin{enumerate}
+\item Section 12.6 - The Inclusion-Exclusion Principle
+\item How to write big union in LaTeX - \url{https://www.physicsread.com/latex-union-symbol/}
+\end{enumerate}
+\subsection*{Problem 7}
+\begin{enumerate}
+\item Counting Review Session, how to rewrite ceiling functions - \url{https://tamu.zoom.us/rec/share/qjnEo-cPbEXhFFuO9zhxvw0BZmcUeehF0RYFrv6E0r-WzlyFJVWzObH-oBjVTn0J.i7HU-0_88mZbTAbj?startTime=1667265517000}
+\end{enumerate}
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100+5$ (bonus) points.  
+For a counting problem, \textit{careful explanation} will be worth majority (about 80\%) of your grade.
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\bigskip
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} (10 points) Section 12.1, Exercise 12.4.  Specify what counting principle(s)
+you are using.  Also explain carefully how you got your final answer.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{How many different license plates are possible (given the restrictions of 3 letters followed by four digits)?}
+Since the license plates in this problem are made up of letters and numbers, the sets containing the English alphabet and base-ten number system will be used in this problem. Given a set that contains the English alphabet, an element in this set can be 1 of 26 different letters (assuming we are only using capital letters in the license plate). Also, given another set that contains the base-ten number system, an element in this set can be 1 of 10 different numbers. Then, to get the set that contains all possible configurations of license plates from these two sets, Cartesian products must be done not only on themselves, but also on each other. In this way, it can be seen that the multiplication principle must be used in order to find the number of possible license plates.\\\\
+Then, because of the need to use the multiplication principle with the given restrictions, it can be seen that there are $26^3$ or $17,576$ different configurations of letters on a license plate and $10^4$ or $10,000$ different configurations of numbers on a license plate. This is because since there can be a repeat of letters in the 3 different possible places for them, there are 26 different possible choices for each of the 3 spots where letters can be found on the license plate. This is similarily the case for the numbers on the license plate, with the exception being that there are now 10 possible choices for numbers in 4 spots in the license plate.\\\\
+Finally, knowing that these configurations must be matched with each other to find all the possible configurations that make up a license plate, a Cartesian product can be done to get a set that has all of these elements within each of these sets mixed in every possible way. Using the multiplication principle, this is as easy as multiplying their configurations together to get a total of $175,760,000$ different configurations of license plates with 3 letters and 4 numbers (which includes license plates with repeating letters and digits).
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 12.1, Exercise 12.5.  Specify what counting principle(s)
+you are using.  Also explain carefully how you got your final answer.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Determine the total number of possible passwords (given the restrictions that a password must be 6, 7, or 8 characters long, a character can be a lower case letter or digit, and the first character must be a lowercase letter)}
+For this problem, it helps to think of three big possibilites for passwords which can be further broken down into their components which also have different possibilities within them. These three big possibilities being passwords of length 6, 7, or 8 characters. Once one of these big possibilities are evaluated to their end (i.e. finding all the possible passwords of length 6 for example), then this same evaluation style can be applied to the other two big possibilities to find the number of possible passwords they possess since these passwords follow the same restrictions. After this, these numbers of possible passwords between passwords of length 6, 7, and 8 can be added together, using the summation principle, since they are separate in the way that each of them are valid passwords on their own and therefore can be added to make a group of valid passwords (i.e. the makeup of the total number of possible passwords)\\\\
+With this strategy in mind, the possible number of passwords of length 6 with the given restrictions will be found first. Usually, with the restrictions being what they are, a character in a password can be 1 of 36 choices. This is found through adding the possible choices a character has, which include 26 letters (since they can only be lowercase) and 10 digits (they are added since a character only has one slot and is not instead a mixture of these components). However, since the first character of a password must be a lowercase letter, the first slot of a password only has 26 choices. Continuing, since this restriction is not held for the rest of the password, the remaining characters of the password have 36 possibilites that they can be. Because of the length of the password being 6 characters in this case, it can be seen from the multiplication principle that there are $26 * 36^5$ or $1,572,120,576$ different possible passwords of length 6. The multiplication principle was used here because of the fact that in order to get a password, these indivdual possibilties of characters must be configured in mutiple ways in order to find possible passwords (in which the number of possible configurations can be found through multiplication). Overall, whenever something is found by mixing multiple elements that are different from one another, then the multiplication principle should be used.\\\\
+Continuing, using the same logic as above, it can be seen that passwords of length 7 have $26 * 36^6$ or $56,596,340,736$ different possible passwords and passwords of length 8 have $26* 36^7$ or $2,037,468,266,496$ different possible passwords. Adding all these possible passwords together, since again they are all valid passwords on their own, you get a total of $2,095,636,727,808$ possible passwords for the whole system.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 12.1, Exercise 12.9.  Specify what counting principle(s)
+you are using.  Also explain carefully how you got your final answer.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Calculate the number of words of length $n$ over an alphabet with $k$ letters that are not palindromes}
+This problem should be solved using the subtraction principle (or complementary counting) since directly counting all the words that are not palindromes would be an arduous process. This principle is best charactersized as subtracting the elements of a set that are unwanted from the total number of elements from that set to get the number of elements that are wanted. In this example, the total number of elements would be the number of possible words of a given length $n$ with a given alphabet with $k$ letters.\\\\
+Firstly, it can be seen that the total number of words over a given length $n$ and alphabet with $k$ letters is equal to $k^n$. This is because with $k$ choices of letters for a length of $n$, there are $k$ choices of letters for each slot in this $n$ length of space. In other words, to find the total amount of possible words with these restrictions, the number of choices in the given alphabet should be multiplied by itself however many opportunites there are for spaces which can be letters.\\\\
+Next, to find the number of palindromes over these restrictions, it is useful to see how the length $n$ affects the number of palindromes over an alphabet with $k$ letters. This can be done by fixing $n$ to some length and seeing how this affects the number of palindromes in terms of $k$.
+\begin{align*}
+&\underline{k} \quad  &= \mbox{ }&k \mbox{ number of palindromes for $n = 1$}\\
+&\underline{k} \quad \underline{k} \quad  &= \mbox{ }&k \mbox{ number of palindromes for $n = 2$}\\
+&\underline{k} \quad \underline{k_1} \quad \underline{k}  &= \mbox{ }&k^2 \mbox{ number of palindromes for $n = 3$}\\
+&\underline{k} \quad \underline{k_1} \quad \underline{k_1} \quad \underline{k} &= \mbox{ }&k^2 \mbox{ number of palindromes for $n = 4$}\\
+&\underline{k} \quad \underline{k_1} \quad \underline{k_2} \quad \underline{k_1} \quad \underline{k} &= \mbox{ } &k^3 \mbox{ number of palindromes for $n=5$}
+\end{align*}
+Firstly, to explain the notation in this diagram, $k$ was used to denote the number of possible letters that could be used in a slot of word length $n$. Then, subsequently, $k$'s with subscripts were meant to denote that the given slot still had $k$ possible letters it could be, however, it had to be the same letter as the $k$'s that shared its subscript (the only exception to this would be the $k_1$ in the $n=2$ case since this slot could realistically be any letter). This is because this is the rule that governs whether a word is a palindrome or not, which is that a word must have symmetry throughout its letters in terms of being read the same way forwards or backwards.\\\\
+Next, the way the number of palindromes were found was through the rule that governs palindromes. At first, for small $n$'s, all that matters when trying to find palindromes is if the first letter and last letter match. In this way, the first and last letter are restricted to only having $k$ possiblities for both of them. This explains how the number of palindromes were found for the cases $n = 1$ and $2$ since when the first and last letters are restricted to being the same letter, the number of palindromes that come from this rule is purely dictated by however many letters are available in the given alphabet. However, when $n \geqslant 3$, the letters in between the first and last letter start to matter when trying to find the number of palindromes. This is because, similarly to the first and last letters, the symmetrical pairs of letters that are in between these two have to follow the same rule as the first and last letters in order to be considered a palindrome. In this way, it can be seen that there are now two pairs that have different possibilities between them, in which both pairs have $k$ possibilities for each of them. Because of this, the multiplication principle becomes useful. This explains where the $k^2$ number of palindromes came from in the cases of $n = 3$ and $4$. This logic can be extended to cases of higher $n$, like $n = 5$, with an exception being that instead of a pair of numbers, there is actually just one number between multiple pairs of symmetrical pairs (i.e. the first and last numbers and the numbers that come after the first number and before the last number, respectively). This, however, doesn't change the logic since this single letter still has $k$ possibilities which makes it a configuration that must be multiplied with the other symmetrical pairs of $k$ possibilities between them both which makes a total of $k^3$ number of possible palindromes.
+\\\\
+Continuing, what can be seen from this diagram is that the number of palindromes for a given word of length $n$ stays the same for a consecutive pair of odd and even integer then changes when the next odd and even integer pair is reached. Specifically, it changes by multiplying the past number of palindromes by the number of available letters $k$. Overall, this gives an idea of a function that relates the number of palindromes based on if the length of the given word is even or odd. This function being:
+$$ \mbox{ \LARGE $k^{\lceil \frac{n}{2}\rceil}$ } $$
+This equation was found by seeing that when a word has an odd or even length, there are $\lceil \frac{n}{2} \rceil$ amount of symmetric letter pairs that have $k$ possible letters they can be between them (since they have to be the same letter). Then, since these pairs each have these $k$ possible letters between them, the total number of palindromes would then be found by multiplying this quantity $k$ times which is equivalent to having $k$ be raised to the power of this quantity.\\\\
+Finally, using the subtraction principle, we can see that the total number of words of length $n$ over an alphabet with $k$ letters that are not palindromes can be denoted as:
+$$ \mbox{\LARGE $k^n - k^{\lceil \frac{n}{2} \rceil}$} $$
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5+5=15$ points) Section 12.2, Exercise 12.20.
+In the explanation, justify why combinations or permutations were chosen.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{(a) In how many ways can John select 3 of the 6 boxes?}
+For this part of the problem, combinations should be used. This is because order does not matter in this situation, which is exactly why combinations are used, and there is an implication of no repetitions which is another property that corresponds with combinations.\\\\
+This specific situation can be represented with ${}_6 C_3$ which is equal to:
+\begin{align*}
+&\frac{6!}{(6-3)!*3!} \quad \mbox{ since ${}_n C_k = \frac{n!}{(n-k)!*k!}$}\\
+&=\frac{6 * 5 * 4 *3*2*1}{(3*2*1)*(3*2*1)} \quad \mbox{ by rewritting}\\
+&= \frac{6*5*4}{6} \quad \mbox{ by canceling out 3*2*1}\\
+&=\frac{5*4}{1} \quad \mbox{ by simplifying}\\
+&=\frac{20}{1} \quad \mbox{ by simplifying}
+\end{align*}
+From this, it can be seen that John has 20 different ways to select three of the six boxes.
+\subsection*{(b) How many ways are there to transport the 6 boxes?}
+Since John makes 2 trips, we can separate the problem into two parts. For his first trip, he has ${}_6 C_3$ ways to pick 3 of the 6 boxes, which as seen above, is equal to 20. Combination is being used again here because like the first part of the problem, the order of the boxes does not matter. Then, for his second trip, we use combinations again to represent the situation which comes out to ${}_3 C_3$ since out of 3 boxes, he has 3 choices. Since any number $n$ choose itself is equal to one, ${}_3 C_3 = 1$. This is proved below:
+\begin{align*}
+&\frac{3!}{(3-3)!*3!}\\
+&=\frac{3!}{3!*0!}\\
+&=\frac{3!}{3!} \quad \mbox{ since 0! = 1}\\
+&= \frac{1}{1} \quad \mbox{ since n / n = 1}
+\end{align*}
+Finally, we multiply these combinations to find the total about of configurations that can make up all the possible ways to transport the 6 boxes. With this in mind, John has $20 * 1$ or $20$ different ways to transport the 6 boxes.
+\subsection*{(c) In how manys can he stack the six boxes in this way?}
+This is the only part of the problem where order matters, since John labeled the boxes in a certain way. Because of this, permutations should be used since they take into account the order of the elements being configured.\\\\
+Similar to part (b), this part of the problem can be separated into parts. First, out of 6 boxes, John has to choose 3 boxes that can be stacked in a certain way. This is best represented with ${}_6 P_3$. This is found by using the definition of a permutation:
+\begin{align*}
+&\frac{6!}{(6-3)!} \quad \mbox{ since ${}_n P_k = \frac{n!}{(n-k)!}$ }\\
+&=\frac{6!}{3!} \quad \mbox{ by simplifying}\\
+&=\frac{6*5*4*3!}{3!} \quad \mbox{ by rewritting}\\
+&=\frac{6*5*4}{1} \quad \mbox{ by canceling 3!}\\
+&=\frac{120}{1} \quad \mbox{ by simplifying}
+\end{align*}
+Next, since John has already used 3 boxes, he has the choice of arranging $3$ boxes in $2$ ways. This is best represented with ${}_3 P_2$. Using the same logic as above, you get ${}_3 P_2 = 6$. Finally, the last thing John has to do is choose out of $1$ box how to arrange it in $1$ way. Intutatively, this means that John only has one choice for this arrangement. However, this can also be proven using the defintion of permutations since ${}_1 P_1$ is indeed equal to $1$ given that $0! = 1$.\\\\
+Altogether, to find all the possible configurations given these individual arrangement possibilities, we should multiply them all. Using this logic, we find that John has $120 * 6 * 1$ or $720$ ways to stack the $6$ boxes in the way he has decided.
+\end{solution}
+
+\newpage
+\begin{problem} ($10+10=20$ points) Section 12.3, Exercise 12.27.
+For (a), use the formula involving the factorials.  For (b), use the hint given in the
+problem statement, and explain carefully your double counting (combinatorial) 
+proof in your own words.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Prove the absorption property of binomial coefficients}
+$$ \binom{n}{k}k = n \binom{n-1}{k-1} $$
+\subsection*{(a) using the definition of the binomial coefficients}
+First, we should find $ n \binom{n-1}{k-1}$ in terms of factorials so we know what we are trying to simplify $ \binom{n}{k}k $ into.
+\begin{align*}
+&n \binom{n-1}{k-1}\\
+&=n * \frac{(n-1)!}{(k-1)!(n-1 - (k-1))!}\quad \mbox{ by the binomial def.} \\
+&= n * \frac{(n-1)!}{(k-1)!(n-1 - k + 1)} \quad \mbox{ by distributing the negative}\\
+&= n * \frac{(n-1)!}{(k-1)!(n-k)!} \quad \mbox{ by simplifying}
+\end{align*}
+Now we can convert $ \binom{n}{k}k $ into terms with factorials to see if it equals this.
+\begin{align*}
+&\binom{n}{k}k\\
+&=\frac{n!}{(n-k)!k!}*k \quad \mbox{ by the binomial def.}\\
+&=\frac{n!}{(n-k)!*k*(k-1)!}*k \quad \mbox { by rewritting based on def. of factorial}\\
+&=\frac{n!}{(n-k)!*(k-1)!} \quad \mbox{ by canceling out $k$}\\
+&=\frac{n * (n-1)!}{(n-k)!*(k-1)!} \quad \mbox{ by rewritting based on def. of factorial}\\
+&= n * \frac{(n-1)!}{(k-1)!(n-k)!} \quad \mbox{ by rearranging}
+\end{align*}
+By the binomial definition, this shows that:
+$$ \binom{n}{k}k = n \binom{n-1}{k-1} $$
+\subsection*{(b) using combinatorial proof}
+The left side of the equation, $\binom{n}{k}k$, can be conceptualized in the following way. Say we have $n$ number of people that we want to put into a team of size $k$ and want to know all the possible ways we can make a team given these inputs. Since the order in which we choose the team members does not matter, we can use the binomial coefficient $\binom{n}{k}$ or $n$ choose $k$. However, this only chooses the team players. If we really want a good team, we will want a team captain. To find the possible team captains, we should only pick from people that have already made the team. Therefore, we can see that out of $k$ people on the team, anyone could be realistically chosen to be team captain. In this way, we can see that there are $k$ possibilities for team captain. This multiplied to the possible team configurations, thanks to the multiplication principle, will give us the total amount of team configurations that also have team captains.\\\\
+Next, to show that the right side of the equation, $n \binom{n-1}{k-1} $, is equal to the left, it can also be conceptualized in a similar way. In this example, let's say that we want to find a team captain first from a group of $n$ people because we believe that these group of people are all qualified to be good team captains. In this way, there are $n$ possibilities for team captains out of a group of $n$ people since anyone can be picked. Then, if we have found our team captain after this, we will then need to find our team members. However, we can not do it the same way we did before, since we already have a team captain. Instead, this time, we have to choose out of $n-1$ people $k-1$ team members since there has been a person taken out of both of these possible groups, namely the team captain. Again, thanks to the multiplication principle, multiplying these two possible configurations gives us the total amount of team combinations that have team captains.\\\\
+Given these two conceptualizations, both the left side and right side of the equation are counting the exact same thing and therefore can be thought of as equal terms.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 12.6, Exercise 12.50.  Explain your reasoning
+carefully in your own words and show your work step-by-step.
+[Hint: Consider the three sets: Set 1 with page numbers that contain a 1 in the least 
+significant (1s) digit; set 2 with those that contain a 1 in the middle (10s) digit, and 
+set 3 with those that contain a 1 in the most significant (100s) digit.]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Find the number of pages that contain a 1 in the page number out of 500 pages}
+Using the inclusion-exclusion formula, we can find all the pages that do not contain a $1$ out of the $500$ pages then subtract that number from $500$ to get the number of pages that do at least have a $1$ in their page number.\\\\
+Starting off, it is useful to think of $3$ sets that represent the possible locations for $1$'s on a page number. Set $S_1$ will represent the page numbers that contain a $1$ in the one's place, set $S_2$ will represent the page numbers that contain a $1$ in the ten's place, and set $S_3$ will denote the page numbers that contain a $1$ in the hundred's place.
+$$ S_1 = \{ \underline{x_{5}}\quad \underline{x_{10}} \quad \underline{1}\}$$
+$$ S_2 = \{\underline{x_{5}} \quad \underline{1} \quad \underline{x_{10}} \}$$ 
+$$ S_3 = \{\underline{1} \quad \underline{x_{10}} \quad \underline{x_{10}} \}$$
+The $x$'s here are meant to show that multiple numbers can be found there and their subscripts show how many different numbers can be found in these positions (the $x$'s in the hundreds place can only go from $0-4$ since the pages stop at $500$ while the other $x$'s can range from $0-9$ since that would still mean the number is smaller than $500$). Given this representation of the situation, we can use the multiplication principle to find the amount of numbers that have $1$'s in the hundreds, tens, or one's place. This would mean that in the set $S_1$, there are $50$ different numbers that obey this criteria since when multiplying $5$ choices of numbers in the hundreds place with $10$ choices in the tens place, you get a total of $50$ different configurations of numbers that all have a $1$ in their one's place. Similar logic can be applied to $S_2$ and $S_3$ to get $50$ numbers for $S_2$ and $100$ numbers for $S_3$.\\\\
+Now, the only thing left to find in order to use the inclusion-exclusion principle is the numbers that obey some combination of multiple sets and numbers (or singular number) that obey(s) all three sets. This is represented below:
+$$ (S_1 \cap S_2) = \{ \underline{x_5} \quad \underline{1} \quad \underline{1}\} $$
+$$ (S_1 \cap S_3) = \{\underline{1} \quad \underline{x_{10}} \quad \underline{1}\} $$
+$$ (S_2 \cap S_3) = \{\underline{1} \quad \underline{1} \quad \underline{x_{10}}\} $$
+$$ (S_1 \cap S_2 \cap S_3) = \{ \underline{1} \quad \underline{1} \quad \underline{1}\} $$
+For reasons stated above, the first set has $5$ numbers in its set, the second set has $10$ numbers that do this, the third set also has $10$ numbers in its set, and finally, the fourth set has only $1$ number in its set, namely $111$.\\\\
+With all this in mind the inclusion-exclusion principle can be used to first find the number of pages that do not have any ones, then this number can be subtracted from the total number of pages to find the pages that do have at least one number one in their page number.\\\\
+Based on the inclusion-exclusion formula, you get:
+$$ |S\backslash \bigcup_{k=1}^{3} S_k| = |S| - |S_1| - |S_2| - |S_3| + |S_1 \cap S_2| + |S_1 \cap S_3| + |S_2 \cap S_3| - |S_1 \cap S_2 \cap S_3| $$
+Plugging values you, it simplifies to:
+$$ |S\backslash \bigcup_{k=1}^{3} S_k| = 500 - 50 - 50 - 100 + 5 + 10 + 10 - 1 $$
+$$ |S\backslash \bigcup_{k=1}^{3} S_k| = 300 + 24 $$
+$$ |S\backslash \bigcup_{k=1}^{3} S_k| = 324 $$
+Then, again, to get the number of pages with at least one number one in their page number, you subtract this number from 500 (or the total number of pages) to get the pages that have this property since this number is the number of pages that do not have a single $1$ within their page numbers. Therefore, the total number of pages that have at least one number one in their page numbers is $500-324$ or $176$.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) What is the smallest number of ordered pairs of integers 
+$(x, y)$ that are needed to guarantee that there are three ordered pairs 
+$(x_1, y_1), (x_2, y_2)$, and $(x_3, y_3)$ such that
+$x_1\textbf{ mod } 5 = x_2 \textbf{ mod } 5 = x_3 \textbf{ mod } 5$ and 
+$y_1 \textbf{ mod } 4 = y_2 \textbf{ mod } 4 = y_3 \textbf{ mod } 4$\,?
+Explain your reasoning carefully.
+[Hint: This problem is about Pigeonhole Principle (Section 12.7). 
+Carefully think what are the pigeonholes and what are the pigeons here.]
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{What is the smallest number of ordered pairs of integers $(x,y)$ that are needed to gurantee that there are three ordered pairs $(x_1,y_1)$,$(x_2,y_2)$,$(x_3,y_3)$ such that they follow the restrictions above?}
+Since this problem will use the Pigeonhole Principle, it will be useful to know what it states. Overall, according to this principle, with $n$ elements going into $k$ places in which $ k < n$, at least one place must contain at least $\lceil n / k \rceil$ elements. In this example, the elements, or $n$, is the thing trying to be found and the places, or $k$, will be found by finding the total possible congruence classes given the restrictions in the problem statement. More specifically, we are trying to find the number of elements $n$, which in this case are integers, that will guarantee that there are 3 ordered pairs that obey the restrictions. Given the statement of the Pigeonhole Principle, we can say that the least number of elements in at least one $k$ place can be denoted by $\lceil n / k \rceil = 3$. So, now all that is left to do in order to solve this problem is find the total number of congruence classes which will take on the value of $k$ in this expression.\\\\
+To find the total number of congruence classes, we should study the restrictions in the problem statement. From the restrictions placed on the $x$'s values, we can see that there are $5$ possible values for x. This is because when a number goes through modular division, the only numbers that they can possibly be after is in the range of $0$ to the number of the modular division minus 1. So, in the case of the $x$ component of the ordered pair, $x$ can only range from values $0-4$ which makes a total of $5$ possible values. Similar logic can be applied to the $y$ component of the ordered pair to get a total of $4$ possible values ranging from $0-3$. Next, because of the multiplication principle, we can multiply these possible values with one another to get the total number of possible congruence classes. This is because when mixing elements that are different from one another, multiplication has to occur in order to get the total number of configurations that are possible. When this is done, you get $5*4$ or $20$ different congruence classes which we said would take on the value of $k$.\\\\
+Plugging this value into the expression from the beginning, we get:
+\begin{align*}
+\lceil \frac{n}{20}  \rceil &= 3\\
+&= 1 < \frac{n}{20} \leqslant 3 \quad \mbox{ by rewritting}\\
+&= 20 < n \leqslant 60 \quad \mbox{ by multiplying by $20$}\\
+\end{align*}
+As a quick note, the reason the ceiling function can be rewritten this way is because of the fact that it always needs to be greater than $1$ in the given circumstance. Also, it can not be greater than $3$ since we are trying to find the smallest number of $n$ that will get $3$, so we denote that the function is also bounded by being less than or equal to $3$.
+\\\\
+From here, we can see that $n$ ranges from $20-60$ (not including $20$). However, the lowest $n$ that satisfies this range and the beginning equation, which was $\lceil \frac{n}{20}  \rceil = 3$, is $41$. This was found by trying to find a value that went slightly over two when dividing by $20$, since this would make the ceiling function push it to being $3$, which is what we want.\\\\
+Because of this, it has been shown that the smallest number of ordered pairs of integers that are needed to guarantee that there are three ordered pairs that meet the restrictions, is $41$.
+\end{solution}
+
+\end{document}

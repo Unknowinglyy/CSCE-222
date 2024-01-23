@@ -1,0 +1,267 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr,hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{Blake Dejohn} } } % type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$]
+\item [\checkmark] Did you type in your name and UIN? 
+\item [\checkmark] Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item [\checkmark] Did you sign that you followed the Aggie Honor Code? 
+\item [\checkmark] Did you solve all problems? 
+\item [\checkmark] Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+} 
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw1.tex} and 
+    \textsl{yourLastName-yourFirstName-hw1.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2022\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{1}
+\duedate{Thursday, 9/8/2022 11:59 p.m.}
+\name{Blake Dejohn}{531002472}  % type your name and UIN here
+\begin{resources}
+\hspace{1cm}
+\subsection*{Resources Overall (used for the whole document)}
+Lecture Notes\\
+"LaTeX Typesetting System" - (found in module view in Canvas)\\
+List of logic symbols - \url{https://en.wikipedia.org/wiki/List_of_logic_symbols}\\
+"How to make clickable links in LaTex" - \url{https://latex-tutorial.com/tutorials/hyperlinks/}
+\\
+How to work with a checklist in LaTeX - \url{https://tex.stackexchange.com/questions/321048/checklist-in-beamer-using-enumitem-package}
+\subsection*{Resources for Problem \#3}
+"Rational Numbers" - \url{https://www.mathsisfun.com/rational-numbers.html}
+\subsection*{Resources for Problem \#6}
+"Knights and Knaves Puzzles" (video and lecture notes) - (found in module 2.1)\\
+"truth-table.pdf" - (found in Homework 1 module)
+\subsection*{Resources for Problem \#7}
+"truth-table.pdf" - (found in Homework 1 module)
+\subsection*{Resources for Problem \#8}
+"Problem Solving Exercise 1" - (found in module 2.1)
+%(All people, books, articles, web pages, etc. that
+ %have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100 + 7$ (bonus) points.
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} ($10+10=20$ points) Section 1.1, Exercise 1.3.
+For (b), give the knight's graph in a text format by giving all
+edges in the graph such that the knight's move from vertex $v_i$ to 
+vertex $v_{i+1}$ is given as $(v_i, v_{i+1})$.  Once you have all of the
+edges written, you can also give the path in the form of 
+$v_i - v_{i+1} - v_{i+2} - \ldots$
+
+Use the common convention of expressing the columns and rows of
+a chessboard as a, b, and c, and 1, 2, and 3, respectively.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\section*{Part a.}
+A Knight's Tour can not be completed on a 3x3 chess board because of the fact that the center square of said board can neither have a Knight's move coming from it nor to it.
+\\
+\\
+In other words, no Knight's move can be made from this square and no other square from this 3x3 chess board can have a Knight's move that goes to this square. This makes it so
+a completed Knight's Tour is impossible because of the inability to travel from or to this square.
+
+\section*{Part b.}
+\subsection*{Edges}
+(a3,c2), (a3,b1), (a2,c3), (a2,c1), (a1,b3), (a1,c2), (b3,c1), (b1,c3)
+\subsection*{Path}
+a3 - c2 - a1 - b3 - c1 - a2 - c3 - b1 - a3\\
+(last move (b1 - a3) is reduntant since it moves back to the start, but I wanted to include all the edges possible in case that was needed)
+\subsection*{Insights}
+Some noteworthy things that are more readily shown with this graph representation is that the square b2 is absent (which proves a Knight's Tour can not be completed with a 3x3 board) and that at least one edge is left out for any given path if the player decides not to go back to where they started.
+\end{solution}
+
+\newpage
+\begin{problem} (2 points $\times$ 5 subproblems = 10 points) Section 2.1, Exercise 2.1
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\\
+\\
+Parts (a), (b), (c), and (d) are all mathematical statments.
+\subsection*{Justification}
+According to Section 2.1, "a statement is a sentence that is either true or false". Therefore, I can conclude that any sentence that holds either a true or false value is a statement. Also, if this statement includes properties of mathematics, then I can reasonably state that this sentence is a mathematical statement. Given this line of reasoning, I say that parts (a), (b), (c), and (d) are all mathematical statements because of the fact that they hold either true or false values while part (e) is not a mathematical statment since this sentence needs more context before it can be assigned a true or false value.
+\end{solution}
+
+\newpage
+\begin{problem} (3 points $\times$ 5 subproblems = 15 points) Section 2.1, Exercise 2.3
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Part a.}
+\textbf{True}
+\\
+\\
+Using long division and following its rules ( $9\overline{)1}$ ), we can see that 9 divides into 10 once and leaves a remainder of 1 each time. This creates a repeating outcome that results in the answer being $0.\overline{1}$.
+\subsection*{Part b.}
+\textbf{False}
+\\
+\\
+A rational number is a number that can be represented as a fraction of two integers. Since $12/99 = 0.\overline{12}$, this shows that the real number $0.\overline{12}$ can be represented as a fraction of two integers and is therefore a rational number.
+\subsection*{Part c.}
+\textbf{False}
+\\
+\\
+You can perfectly divide $11111111$ by $1111$ to get $10001$. This shows that the greatest common divisior between these two numbers is actually $1111$ since it can both divide $11111111$ and itself without leaving any remainders.
+\subsection*{Part d.}
+\textbf{True}
+\\
+\\
+Given the axiom that two negative numbers multiplied together create a positive product, the two negative ones are guaranteed to make a positive product. Next, with the sign out of the way, we can treat the ones like regular, positive ones which multiply together to get another positive one.
+\subsection*{Part e.}
+\textbf{True}
+\\
+\\
+An infinite set is one that has no end. Because of how new positive integers can be found (using the rules of the base 10 number system), there is seemingly no end to the set of all positive numbers which therefore makes it an infinite set.
+\end{solution}
+
+\newpage
+\begin{problem} (3 points $\times$ 2 subproblems = 6 points) Section 2.2, Exercise 2.7 (a) and (b)
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\section*{Part a.}
+Albert cooks pasta and Emmy is not happy.
+\section*{Part b.}
+If Albert cooks pasta, then Albert and Emmy are happy.
+\end{solution}
+
+\newpage
+\begin{problem} (3 points $\times$ 2 subproblems = 6 points) Section 2.2, Exercise 2.8 (a) and (d)
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\section*{Part a.}
+$(\textit{C} \rightarrow \neg \textit{S})$
+\section*{Part d.}
+$(\textit{S} \leftrightarrow \neg \textit{C})$
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.2, Exercise 2.18.
+Use a truth table to show your reasoning. 
+
+Example \LaTeX\ source for how to draw a truth table is shown 
+in the truth-table.tex and truth-table.pdf files.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\section*{Formalization}
+A = "A is a knight"\\
+B = "B is a knight"\\
+A's statement = "I am a knave or B is a knight"\\
+\begin{displaymath}
+\begin{array}{|c c| |c|c|}
+A & B & \neg A \lor B & A \leftrightarrow \neg A \lor B \\
+\hline
+T & T & T & T\\
+T & F & F & F\\
+F & T & T & F\\
+F & F & T & F\\
+\end{array}
+\end{displaymath}
+\section*{Conclusion}
+Both A and B are Knights. This is because this is the only case where the logical statement $A \leftrightarrow \neg A \lor B$ outputs a true value. This is important because this logical statement determines if A's statement was false (which means that A is a Knave and the logical statement will output a true value) or if A's statement was true (which means that A is a Knight, which once again, means the logical statement will ouput a true value). Since this logical statement outputted false whenever A or B was assigned to be a Knave (or when they were both knaves), it can be reasoned that they both must be Knights.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.3, Exercise 2.25.
+Use a truth table.
+\end{problem}
+\begin{solution} 
+\hspace{1cm}
+\subsection*{Proof for $(A \rightarrow B) \land (B \rightarrow A) \equiv A \leftrightarrow B$}
+\hspace{1cm}
+\begin{displaymath}
+\begin{array}{|c c| c |c| |c| c|}
+A & B & A \rightarrow B & B \rightarrow A & A \rightarrow B \land B \rightarrow A & A \leftrightarrow B\\
+\hline
+T & T & T & T & T & T\\
+T & F & F & T & F & F\\
+F & T & T & F & F & F\\
+F & F & T & T & T & T\\ 
+\end{array}
+\end{displaymath}
+\subsection*{Conclusion}
+As can be seen from the truth table, for every possible combination of truth values between A and B, the logical statements $(A \rightarrow B) \land (B \rightarrow A)$ and $A \leftrightarrow B$ output the same truth values. This means that they are logically equivalent since they are guaranteed to ouput the same value, no matter the starting values of their inputs. 
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 2.3, Exercise 2.26.
+Your answer should consist of a series of logical equivalences 
+you learned in the text, and the final step must resolve to $T$.
+Do not use a truth table.  Study the proofs of Proposition 2.8 (b) and (c) 
+for the expected style of your answer.  Watching the video ``Problem 
+Solving Exercise 1" in Module \textbf{2.1} will also be helpful.
+
+Example \LaTeX\ source for how to align the steps nicely is shown 
+in the truth-table.tex and truth-table.pdf files.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\section*{Proof that $(A \land (A \rightarrow B)) \rightarrow B$ is a tautology}
+\begin{align}
+(A \land (A \rightarrow B)) \rightarrow B &\equiv (A \land (\neg A \lor B)) \rightarrow B \quad \quad \mbox{by } P \rightarrow Q \equiv \neg P \lor Q\\
+&\equiv (A \land \neg A) \lor (A \land B) \rightarrow B \quad \quad \mbox{by distributive law}\\
+&\equiv F \lor (A \land B) \rightarrow B \quad \quad \mbox{since } A \land \neg A \equiv F\\
+&\equiv (A \land B) \rightarrow B \quad \quad \mbox{since } F \lor P \equiv P\\
+&\equiv \neg (A \land B) \lor B \quad \quad \mbox{by } P \rightarrow Q \equiv \neg P \lor Q\\
+&\equiv \neg A \lor \neg B \lor B \quad \quad \mbox{by distributive law}\\
+&\equiv \neg A \lor (\neg B \lor B) \quad \quad \mbox{by associative law of } \lor\\
+&\equiv \neg A \lor T \quad \quad \mbox{since } \neg B \lor B \equiv T\\
+&\equiv T \quad \quad \mbox{since } T \mbox{ dominates } \lor
+\end{align}
+\end{solution}
+\end{document}

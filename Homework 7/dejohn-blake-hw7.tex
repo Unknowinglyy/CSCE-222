@@ -1,0 +1,280 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr,hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to answer this homework. \\[2ex]
+ \textbf{Electronic signature: \underline{ (Blake Dejohn) } } } % <= type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item [\checkmark] Did you type in your name and UIN? 
+\item [\checkmark] Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted)
+\item [\checkmark] Did you sign that you followed the Aggie Honor Code? 
+\item [\checkmark] Did you solve all problems? 
+\item [\checkmark] Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw7.tex} and 
+    \textsl{yourLastName-yourFirstName-hw7.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}
+    Your files must contain your name and UIN in the given spaces and the electronic signature
+    (your full name) correctly; otherwise, you may receive zero points for this homework\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2022\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{7}
+\duedate{Monday, 11/21/2022 before 11:59 p.m.}
+\name{ (Blake Dejohn) }{ (531002472) } % <= type your full name and UIN here
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\begin{enumerate}
+\subsection*{Resources Overall (used for the whole document)}
+\item How to bold math symbols - \url{https://tex.stackexchange.com/questions/595/how-can-i-get-bold-math-symbols}
+\item How to bold text - \url{https://www.overleaf.com/learn/latex/Bold%2C_italics_and_underlining#:~:text=the%20Overleaf%20link%3A-,Bold%20text,science%20were%20made%20by%20accident.}
+\item How to denote the characterstic polynomial symbol - \url{https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols}
+\end{enumerate}
+\begin{enumerate}
+\subsection*{Problem 1}
+\item Section 13.1 - The Basic Concept
+\end{enumerate}
+\begin{enumerate}
+\subsection*{Problem 2}
+\item Section 13.2 - Operations on Generating Functions
+\item Problem Solving Exercise on Generating Functions - \url{https://www.youtube.com/watch?v=Lsq5I2MpIHo&ab_channel=HyunyoungLee}
+\end{enumerate}
+\begin{enumerate}
+\subsection*{Problem 3}
+\item Section 14.2 - A Motivating Example
+\item Solving Recurrence Warmup2 -\url{https://www.youtube.com/watch?v=lEzi6xgfeCM&ab_channel=HyunyoungLee}
+\end{enumerate}
+\begin{enumerate}
+\subsection*{Problem 4}	
+\item Section 14.5 - Reciprocal Polynomials
+\item Section 14.7 - Characteristic Polynomials
+\item Solving Recurrences using Characteristic Polynomials - \url{https://www.youtube.com/watch?v=0RIQYtP_v2g&ab_channel=HyunyoungLee}
+\end{enumerate}
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100+10$ (bonus) points.  \textit{Explanation will be about 80\% of the grade for each problem.}
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\bigskip
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} (30 points) Section 13.1, Exercise 13.4. Explain your reasoning carefully, 
+including (but not limited to) why you set up your generating function in the way you do.
+
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Determine the number of different ways the 20 cards can be distributed given the rules.}
+Firstly, it will be helpful to consider the rules in which the cards can be distributed. The best way to do this is create sets that represent the possible number of cards a grandchild can potentially have based on the rules grandpa Dell has put into place.\\\\
+Since Albert can only have an even number of cards between the values of 8 and 14, we can denote his set as set A and formally say that set A is equal to/has the values:
+$$ A = \{8,10,12,14\} $$
+A similar process can be done for Bella and Clara, since they have the same restrictions as one another. The only difference is that their restrictions differ from Albert in that they can only have an odd number of cards between the values 3 and 9. Again, this is formally denoted by sets B and C, which represent Bella and Clara respectively, by:
+$$ B = \{3,5,7,9\} \mbox{ \& } C = \{3,5,7,9\}$$
+Next, since the number of cards that a grandchild has depends on the number of cards the other two grandchildren have, the way to find the total number of different ways to distribute the 20 cards is by finding combinations of these possible number of card values for each grandchild that add up to 20. This can be done with generating functions.\\\\
+Starting off, converting sets $A, B$ and $C$ to their respective generating functions $A(z),  B(z)$ and $C(z)$, you get:
+\begin{align*}
+A(z) &= z^8 + z^{10} + z^{12} + z^{14}\\
+B(z) &= z^3 + z^5 + z^7 + z^9\\
+C(z) &= z^3 + z^5 + z^7 + z^9
+\end{align*}
+To explain how the sets were converted to generating functions, each $z$ term in all the generating functions has a coefficient of 1 because of how each number in their respective sets only show up once. Next, the exponent of the $z$ term was used to represent the specific number that is present in the set that the generating function is looking to represent.\\\\
+This set up is important because by taking advantage of the product rule of exponents ($z^a * z^b = z^{a+b}$), the number of combinations between these three sets that add up to 20 can be found by multiplying all of them to each other and finding the $z$ term that has 20 as its exponent. (since this coefficient would denote the number of combinations that add up to 20).\\\\
+With this in mind, you get:
+$$ B(z) * C(z) = z^6 + 2z^8 + 3z^{10} + 4z^{12} + 3z^{14} + 2z^{16} + z^{18} $$
+Finally, multiplying this by $A(z)$:
+$$ A(z) * B(z) * C(z) = z^{14} + 3z^{16} + 6z^{18}+ \mathbf{10z^{20}}+ 12z^{22}+ 12z^{24}+ 10z^{26}+ 6z^{28}+ 3z^{30}+ z^{32} $$
+Because of the reasons stated above and what can be seen above, there are \textbf{10} number of different ways to distribute 20 baseball cards between Albert, Bella and Clara given the restrictions.
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 13.2, Exercise 13.7. Explain.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Determine the generating function of the sequence
+$$ (1,0,1,0,1,0,\cdots) $$
+in closed form and its multiplicative inverse.}
+To begin, using the general form of a generating function is helpful. Based on the definition of generating functions, we can denote the sequence above by $A(z)$ and say it is equal to:
+$$ A(z) = \sum_{k=0}^{\infty} a_k z^k = a_0 z^0 + a_1 z^1 + a_2 z^2 + \cdots$$
+From the sequence given in the problem, we can see that the $a_k$ terms alternate between the values 1 and 0. Specifically, the $a_k$ terms are 1 when k is even (and when k = 0) and 0 when k is odd. With this in mind, the sequence from the general generating function definition can be simplified as follows.
+\begin{align*}
+A(z) &= \sum_{k=0}^{\infty} a_k z^k = 1*z^0 + 0 * z^1 + 1*z^2 + 0 * z^3 + \cdots\\
+&= 1 + 0 + z^2 + 0 + z^4 + \cdots\\
+&= 1 + z^2 + z^4 + \cdots
+\end{align*}
+As can be seen above, the generating function for $A(z)$ can be best described as a sum of a sequence that includes one in the front and $z^k$ terms where k is all the positive even numbers.\\\\
+Next, it would be most beneficial to now introduce the defintion of a multiplicative inverse because of the natural of the $A(z)$ sequence. Overall, a multiplicative inverse is defined as a sequence $B(z)$ which when multiplied by the original $A(z)$ function, gives an answer of 1. This is formally shown with the statement
+$$ A(z)B(z) = 1$$
+This shows why defining the multiplicative inverse was useful now since $A(z)$ has a 1 in the beginning of its generating function. Now, all that has to be done to find both $A(z)$ and $B(z)$ is take away all the terms in $A(z)$ that are not 1 to find $B(z)$ and then do  algebraic manipulation on the definition of $B(z)$ to then find $A(z)$.\\\\
+Now, to cancel out all the terms that are not 1 in $A(z)$, we can use a shifted version of $A(z)$ since this version is guaranteed to have the terms we want to cancel out based on how much it is shifted. Looking at the most simplified version of $A(z)$ (i.e. $1 + z^2 + z^4+ \cdots$), it can be seen that a right shift by $z^2$ would take the 1 out of sequence while leaving everything else. This is significant since subtracting this shifted version of $A(z)$ from $A(z)$ will leave nothing but 1, which is the definition of a multiplicative inverse. The visual representation of the shift is shown below.
+\begin{align*}
+A(z) &= 1 + z^2 + z^4 + \cdots\\
+z^2 * A(z) &= z^2 + z^4 + \cdots
+\end{align*}
+Continuing, from the steps outlined above, you get $A(z)$ by manipulating the terms algebraically and $B(z)$ by comparing the $A(z)$ minus the shifted version of $A(z)$ equations.
+\begin{align*}
+A(z) - z^2A(z) &= 1\\
+A(z)(1 - z^2) &= 1 \quad \mbox{by factoring $A(z)$}\\
+A(z) &= \frac{1}{1-z^2} \quad \mbox{by dividing the factored term}
+\end{align*}
+Based on the definition of the multiplicative inverse, we can see that $(1-z^2)$ is the multiplicative inverse since when it was multiplied by $A(z)$, a product of 1 was gotten. Finally, by the steps gone through above, the sequence $(1,0,1,0,1,0,\cdots)$ has the closed form $\frac{1}{1-z^2}$.
+\end{solution}
+
+\newpage
+\begin{problem} ($20+20=40$ points) Section 14.2, Exercise 14.10. 
+For (a), study carefully how the example in Section 14.2 is solved using generating functions, 
+and solve it in a similar way. 
+For (b), do the partial fraction decomposition of $H(z)$ and expand it into a sum of two power 
+series and then combine them into a power series to find the coefficient for the $z^k$ power 
+term (like we did for the Fibonacci recurrence in the problem solving video and in the lecture 
+notes). 
+\textit{Explain} your steps carefully.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Part (a). Find a closed form of the generating function of the sequence $\sum_{n=0}^{\infty} h_n$ given by the recurrence relation\\
+$h_0 = 1$ and $h_n = 2h_{n-1} + 1$ when $n \geqslant 1$.}
+It is useful again to know the definition of an ordinary generating function in terms of a power series.
+$$ H(z) = \sum_{k=0}^{\infty} h_k z^k$$
+Then, using the definition of the recurrence relation $h_n$, this power series can be rewritten as follows:
+\begin{align*}
+H(z) &= h_0 + \sum_{k=1}^{\infty} (2h_{k-1} + 1)z^k\\
+H(z) &= 1 + \sum_{k=1}^{\infty} 2h_{k-1} z^k + \sum_{k=1}^{\infty} (1)z^k \quad \mbox{since $h_0 = 1$ and summation distribution}\\
+H(z) &= 1 + 2 \sum_{k=0}^{\infty} h_k z^{k+1} + \sum_{k=1}^{\infty} (1)z^k \quad \mbox{by factoring the 2 and recognizing $\sum_{k=0}^{\infty} h_k z^{k+1} = \sum_{k=1}^{\infty}h_{k-1} z^k$ }\\
+H(z) &= 1 + 2 \sum_{k=0}^{\infty} h_k z^{k+1} + \frac{z}{1-z} \quad \mbox{ since $\sum_{k=1}^{\infty} (1)z^k =$ right shift of $\frac{1}{1-z}$}\\
+H(z) &= 1 + 2zH(z) + \frac{z}{1-z} \quad \mbox{since $\sum_{k=0}^{\infty} h_k z^{k+1}$ = right shift of $H(z)$ which was equal to $\sum_{k=0}^{\infty} h_k z^k$}
+\end{align*}
+Finding the closed form of the generating function of the sequence is now a matter of using algebra. The process for this is worked out below.
+\begin{align*}
+H(z) &= 1 + 2zH(z) + \frac{z}{1-z}\\
+H(z) - 2zH(z) &= 1 + \frac{z}{1-z} \quad \mbox{by subtracting by $2zH(z)$}\\
+H(z)(1-2z) &= 1 + \frac{z}{1-z} \quad \mbox{by factoring out $H(z)$}\\
+H(z) &= \frac{1}{1-2z}(1 + \frac{z}{1-z}) \quad \mbox{by dividing by $(1-2z)$}\\
+H(z) &= \frac{1}{1-2z} + \frac{z}{(1-2z)(1-z)} \quad \mbox{by distributing}\\
+H(z) &= \frac{1-z+z}{(1-2z)(1-z)}\quad \mbox{by common denominators and combining}\\
+H(z) &= \frac{1}{2x^2-3x+1} \quad \mbox{by simplifying}
+\end{align*}
+\subsection*{Part (b). Find a closed form for the coefficients}
+Finding a closed form for the coefficients will be found using partial fraction decomposition.
+\begin{align*}
+H(z) &= \frac{1}{2x^2-3x+1}\\
+H(z) &= \frac{1}{(1-2z)(1-z)} \quad \mbox{by factoring}\\
+H(z) &= \frac{1}{(1-2z)(1-z)} = \frac{A_1}{1-2z} + \frac{A_2}{1-z} \quad \mbox{by partial fractions}\\
+H(z) &= 1 = A_1(1-z) + A_2(1-2z) \quad \mbox{by common denominator}\\
+H(z) &= 1 = A_1 - A_1z + A_2 - 2A_2z \quad \mbox{by distributing}\\
+H(z) &= 1 = (A_1 + A_2) + (-2A_2 - A_1)z \quad \mbox{by grouping common factors}
+\end{align*}
+From here, there are two equations that are found. These equations include, $A_1 + A_2 = 1$ and $-2A_2 - A_1 = 0$. This is because the first equation is the only place the 1 can come from and the second needs to be zero since there is no $z$ term in the numerator. Solving this system of equations includes manipulating the equations and plugging in useful terms.
+\begin{align*}
+&A_1 + A_2 = 1 \mbox{ means } A_1 = 1 - A_2\\
+&\mbox{Plugging this into the second equation gives you } -2A_2 - (1-A_2) = 0\\
+&\mbox{Then, }-2A_2 -1 + A_2 = 0 \quad \mbox{by distributing}\\
+&\mbox{With more simplifying, } -A_2 - 1 = 0 \quad \mbox{ by combining}\\
+&\mbox{Next, } A_2 = -1 \quad \mbox{ by adding 1 and dividing negative one from $A_2$}\\
+&\mbox{Finally, plugging this value into the first equation, you get } A_1 - 1 = 1\\
+&\mbox{Which means, } A_1 = 2.
+\end{align*}
+As a summary, we can see from this that $A_1 = 2$ and $A_2 = -1$. This is useful since this can be plugged into the original $H(z)$ equation(i.e. $H(z) = \frac{A_1}{1-2z} + \frac{A_2}{1-z}$) to get the summation of two power series which then can be used to find the coefficient of the $z^k$ power term of $H(z)$ when analyzing the behavior of each partial fraction/closed form of generating function.
+\begin{align*}
+H(z) &= \frac{2}{1-2z} - \frac{1}{1-z} \quad \mbox{by plugging in $A_1 = 2$ and $A_2 = -1$}\\
+H(z) &= 2(\frac{1}{1-2z}) - (1+z+z^2+z^3+\cdots) \quad \mbox{by factoring 2 and since $\frac{1}{1-z} =$ the sequence $(1,1,1,\cdots)$}\\
+H(z) &= 2(1+2z + 2^2z^2+2^3z^3+\cdots) - (1+z+z^2+z^3+\cdots) \quad \mbox{since $\frac{1}{1-az} =$ the sequence $(1,a,a^2,a^3,\cdots)$}\\
+H(z) &= (2^1+2^2z+2^3z^2+2^4z^3+\cdots) - (1+z+z^2+z^3+\cdots)\\
+H(z) &= (2^1-1) + (2^2-1)z + (2^3-1)z^2 + (2^4-1)z^3 \quad \mbox{by analyzing the $z^k$ term's coefficient}\\
+[z^n]H(z) &= 2^{n+1} - 1
+\end{align*}
+The closed form for the coefficients is given by $[z^n]H(z) = 2^{n+1}-1$.
+\end{solution}
+
+\newpage
+\begin{problem} (20 points) Section 14.7, Exercise 14.30.  Study Example 14.14
+in Section 14.7 and solve this exercise problem in a very similar way.  Also \textit{explain} 
+in a similar way as in Example 14.14.
+\end{problem}
+\begin{solution}
+\hspace{1cm}
+\subsection*{Using the characteristic equation, find a closed form solution for the coefficients $(g_0,g_1,g_2,\cdots)$ satisfying $g_0 =2$, $g_1 = 1$ and $g_n - 7g_{n-1} + 12g_{n-2} = 0$ for all $n \geqslant 2$}
+Starting off, a characteristic polynomial is the reciprocal polynomial gotten from a specific recurrence relation that equals 0. Given this, we should also defined a reciprocal polynomial. A reciprocal polynomial is denoted with a capital R exponent and is defined as:
+$$ g^R(z) = z^dg(1/z) $$
+Where $d$ is the highest degree of the original $g(z)$ function. With the use of these definitions, a characterstic polynomial of the recurrence relation can be found.\\\\
+To find the original polynomial of the recurrence relation, we can keep the coefficients of the $g_n$ terms alone and only look at how much each term is shifting the original function. For instance, the $7g_{n-1}$ is scaling the original function by 7 and shifting it to the right once. So, when we would have otherwise factored the original function from this term, it would have become the term $7z$. This process will be done with the other terms as well. From this, we can see that the original polynomial is, $1 - 7z + 12z^2$ (the first $g_n$ term is 1 since it is neither scaled nor shifted). Finding the reciprocal polynomial of this is done by substituting $\frac{1}{z}$ for $z$ and multiplying the whole polynomial by $z^2$ since $d$ in this case is equal to 2. Since this reciprocal polynomial and characterstic polynomial are equal, this is also the way to find the characterstic polynomial.The work is done below.
+\begin{align*}
+g(z) &= 1 - 7z + 12z^2 \quad \mbox{the original polynomial}\\
+g^{R}(z) &= z^2(1-7\frac{1}{z}+12\frac{1}{z^2})\\
+g^{R}(z) &= z^2 - 7z + 12\\
+\chi (z) &: z^2 - 7z + 12
+\end{align*}
+Now, with the characterstic polynomial, the closed form of the recurrence relation is found with a linear combination of the roots of the characterstic polynomial (or the $z$ values when it equals 0).
+\begin{align*}
+\chi (z) &: z^2 - 7z + 12 = 0\\
+\chi (z) &: (z-4)(z-3) = 0\\
+\mbox{So, } g_n &= C_1*(4)^n + C_2*(3)^n
+\end{align*}
+Then, using the inital conditions, we can find the values of $C_1$ and $C_2$.
+\begin{align*}
+&g_0 = 2 = C_1 + C_2 \quad \mbox{by plugging in $n=0$}\\
+&g_1 = 1 = 4C_1 + 3C_2 \quad \mbox{by plugging in $n=1$}\\
+&\mbox{Solving for $C_1$ in the first equation, } C_1 = 2-C_2\\
+&\mbox{Plugging this into the second equation, } 1= 4(2-C_2) + 3C_2\\
+&1= 8-4C_2 + 3C_2 \quad \mbox{by distributing}\\
+&1= 8-C_2 \quad \mbox{by simplifying}\\
+&1+C_2 = 8\quad \mbox{by adding $C_2$}\\
+&C_2 = 7 \quad \mbox{by subtracting 1}\\
+&\mbox{Plugging into the first equation, } 2 = C_1 + 7\\
+& C_1 = -5
+\end{align*}
+Altogether, $C_1 = -5$ and $C_2 = 7$. Therefore, 
+$$ g_n = 7*3^n - 5*4^n $$
+is the closed form solution for the coefficients of the recurrence relation.
+\end{solution}
+
+\end{document}
